@@ -1,0 +1,8 @@
+# Ignore all .log files
+*.log
+
+# Ignore the images folder
+images/
+
+# Ignore the assets folder
+assets/
