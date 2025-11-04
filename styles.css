@@ -151,7 +151,7 @@ h2 {
     }
 
     21%, 30% {
-        background-image: url('images/cars/scorpio\ s11.png');
+        background-image: url('images/cars/scorpio_s11.png');
     }
     31%, 40% {
         background-image: url('images/cars/scorpion.png');
@@ -166,10 +166,10 @@ h2 {
         background-image: url('images/cars/safari.png');
     }
     71%, 80% {
-        background-image: url('images/cars/roxx.png');
+        background-image: url('images/cars/creta.png');
     }
     81%, 90% {
-        background-image: url('images/cars/scorpio_s11.png');
+        background-image: url('images/cars/compass.png');
     }
     91%, 100% {
         background-image: url('images/cars/scorpion.png');
