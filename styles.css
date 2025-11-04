@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap');
 
+/* GLOBAL STYLES */
 body,
 h1,
 h2 {
@@ -8,6 +9,7 @@ h2 {
         Arial, sans-serif;
 }
 
+/* HERO SECTION */
 .hero-section {
     position: relative;
     height: 90vh;
@@ -18,6 +20,7 @@ h2 {
     background-color: #000;
 }
 
+/* VIDEO BACKGROUND */
 .video-background-container {
     position: absolute;
     top: 0;
@@ -37,10 +40,11 @@ h2 {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.65);
+    background-color: rgba(0, 0, 0, 0.7); 
     z-index: 2;
 }
 
+/* HERO CONTENT */
 .hero-content {
     position: relative;
     left: 10%;
@@ -51,7 +55,7 @@ h2 {
 
 .hero-content h1 {
     font-size: 3.5rem;
-    font-family: "Lora", serif;
+    font-family: "Lora", serif; 
 }
 
 .hero-content h2 {
@@ -59,12 +63,11 @@ h2 {
     font-weight: 400;
 }
 
-
+/* WELCOME AREA (PILL SHAPE) */
 #welcome_area {
     background-color: rgba(255, 253, 253, 0.19);
     width: 70%;
     height: 3.2rem; 
-    
     padding: 0.2rem 1rem; 
     
     display: flex;
@@ -82,19 +85,56 @@ h2 {
 
 #welcome_txt {
     display: inline-block;
-    
     font-family: "Lora", serif;
     font-size: 1.4rem;
     color: #fff;
 }
 
+/* CORNER PATTERN (ANIMATED SLIDESHOW) */
+.corner-pattern {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    z-index: 3;
 
-.content-below {
-    padding: 40px;
-    font-size: 1.2rem;
-    line-height: 1.6;
+    /* Base size for desktop */
+    width: 35rem; 
+    height: 25rem;
+    
+    background-image: url('images/cars/thar.png'); 
+    background-repeat: no-repeat;
+    background-size: contain; 
+    background-position: center;
+
+    opacity: 1;
+    
+    animation: imageSlideshow 30s infinite; 
 }
 
+/* KEYFRAMES (Non-overlapping steps for consistent image change) */
+@keyframes imageSlideshow {
+    
+    0%, 9% { background-image: url('images/cars/fortuner.png'); }
+    10% { background-image: url('images/cars/roxx.png'); }
+    19% { background-image: url('images/cars/roxx.png'); }
+    20% { background-image: url('images/cars/scorpio_s11.png'); }
+    29% { background-image: url('images/cars/scorpio_s11.png'); }
+    30% { background-image: url('images/cars/scorpion.png'); }
+    39% { background-image: url('images/cars/scorpion.png'); }
+    40% { background-image: url('images/cars/thar.png'); }
+    49% { background-image: url('images/cars/thar.png'); }
+    50% { background-image: url('images/cars/xuv700.png'); }
+    59% { background-image: url('images/cars/xuv700.png'); }
+    60% { background-image: url('images/cars/safari.png'); }
+    69% { background-image: url('images/cars/safari.png'); }
+    70% { background-image: url('images/cars/creta.png'); }
+    79% { background-image: url('images/cars/creta.png'); }
+    80% { background-image: url('images/cars/compass.png'); }
+    89% { background-image: url('images/cars/compass.png'); }
+    90%, 100% { background-image: url('images/cars/scorpion.png'); } 
+}
+
+/* MEDIA QUERY FOR MOBILE RESPONSIVENESS */
 @media (max-width: 600px) {
     .hero-content {
         left: 5%;
@@ -117,61 +157,31 @@ h2 {
     #welcome_txt {
         font-size: 1rem;
     }
+    
+    /* CORNER PATTERN: LARGER SIZE FOR MOBILE */
+    .corner-pattern {
+        width: 25rem; 
+        height: 17rem; 
+        right: -1rem; 
+        bottom: 5rem;
+        opacity: 1; 
+    }
 }
 
-.corner-pattern {
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    z-index: 3;
+.gradient-text {
+    background-image: linear-gradient(
+        30deg,          
+        #f3f198,        
+        #f99f03         
+    );
 
-    width: 35rem;
-    height: 25rem;
-    
-    background-image: url('images/cars/fortuner.png'); 
-    
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
+    -webkit-background-clip: text; 
+    background-clip: text;
 
-    opacity: 1;
-    
-    animation: imageSlideshow 20s infinite;
-}
+    color: transparent;
 
-
-@keyframes imageSlideshow {
-
-    0%, 15% {
-        background-image: url('images/cars/roxx.png');
-    }
-
-    11%, 20% {
-        background-image: url('images/cars/fortuner.png');
-    }
-
-    21%, 30% {
-        background-image: url('images/cars/scorpio_s11.png');
-    }
-    31%, 40% {
-        background-image: url('images/cars/scorpion.png');
-    }
-    41%, 50% {
-        background-image: url('images/cars/thar.png');
-    }
-    51%, 60% {
-        background-image: url('images/cars/xuv700.png');
-    }
-    61%, 70% {
-        background-image: url('images/cars/safari.png');
-    }
-    71%, 80% {
-        background-image: url('images/cars/creta.png');
-    }
-    81%, 90% {
-        background-image: url('images/cars/compass.png');
-    }
-    91%, 100% {
-        background-image: url('images/cars/scorpion.png');
-    }
+    font-size: 3rem;
+    font-weight: bold;
+    position: relative;
+    top: 2rem;
 }
