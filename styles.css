@@ -118,3 +118,51 @@ h2 {
         font-size: 1rem;
     }
 }
+
+.corner-pattern {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    z-index: 3;
+
+    width: 35rem;
+    height: 25rem;
+    
+    background-image: url('images/cars/fortuner.png'); 
+    
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
+    opacity: 1;
+    
+    animation: imageSlideshow 13s infinite;
+}
+
+
+@keyframes imageSlideshow {
+
+    0%, 15% {
+        background-image: url('images/cars/fortuner.png');
+    }
+
+    16%, 30% {
+        background-image: url('images/cars/safari.png');
+    }
+
+    31%, 45% {
+        background-image: url('images/cars/scorpio\ s11.png');
+    }
+    46%, 60% {
+        background-image: url('images/cars/scorpion.png');
+    }
+    61%, 75% {
+        background-image: url('images/cars/thar.png');
+    }
+    76%, 90% {
+        background-image: url('images/cars/xuv700.png');
+    }
+    91%, 100% {
+        background-image: url('images/cars/fortuner.png');
+    }
+}
