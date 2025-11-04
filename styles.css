@@ -136,33 +136,42 @@ h2 {
 
     opacity: 1;
     
-    animation: imageSlideshow 13s infinite;
+    animation: imageSlideshow 20s infinite;
 }
 
 
 @keyframes imageSlideshow {
 
     0%, 15% {
+        background-image: url('images/cars/roxx.png');
+    }
+
+    11%, 20% {
         background-image: url('images/cars/fortuner.png');
     }
 
-    16%, 30% {
-        background-image: url('images/cars/safari.png');
-    }
-
-    31%, 45% {
+    21%, 30% {
         background-image: url('images/cars/scorpio\ s11.png');
     }
-    46%, 60% {
+    31%, 40% {
         background-image: url('images/cars/scorpion.png');
     }
-    61%, 75% {
+    41%, 50% {
         background-image: url('images/cars/thar.png');
     }
-    76%, 90% {
+    51%, 60% {
         background-image: url('images/cars/xuv700.png');
     }
+    61%, 70% {
+        background-image: url('images/cars/safari.png');
+    }
+    71%, 80% {
+        background-image: url('images/cars/roxx.png');
+    }
+    81%, 90% {
+        background-image: url('images/cars/scorpio_s11.png');
+    }
     91%, 100% {
-        background-image: url('images/cars/fortuner.png');
+        background-image: url('images/cars/scorpion.png');
     }
 }
