@@ -171,81 +171,40 @@ h2 {
 
 /* KEYFRAMES (Non-overlapping steps for consistent image change) */
 
+/* KEYFRAMES - CORRECTED FOR SMOOTH TRANSITION */
 @keyframes imageSlideshow {
-  0%,
-  9% {
-    background-image: url("images/cars/fortuner.png");
-  }
-
-  10% {
-    background-image: url("images/cars/roxx.png");
-  }
-
-  19% {
-    background-image: url("images/cars/roxx.png");
-  }
-
-  20% {
-    background-image: url("images/cars/scorpio_s11.png");
-  }
-
-  29% {
-    background-image: url("images/cars/scorpio_s11.png");
-  }
-
-  30% {
-    background-image: url("images/cars/scorpion.png");
-  }
-
-  39% {
-    background-image: url("images/cars/scorpion.png");
-  }
-
-  40% {
-    background-image: url("images/cars/thar.png");
-  }
-
-  49% {
-    background-image: url("images/cars/thar.png");
-  }
-
-  50% {
-    background-image: url("images/cars/xuv700.png");
-  }
-
-  59% {
-    background-image: url("images/cars/xuv700.png");
-  }
-
-  60% {
-    background-image: url("images/cars/safari.png");
-  }
-
-  69% {
-    background-image: url("images/cars/safari.png");
-  }
-
-  70% {
-    background-image: url("images/cars/creta.png");
-  }
-
-  79% {
-    background-image: url("images/cars/creta.png");
-  }
-
-  80% {
-    background-image: url("images/cars/compass.png");
-  }
-
-  89% {
-    background-image: url("images/cars/compass.png");
-  }
-
-  90%,
-  100% {
-    background-image: url("images/cars/scorpion.png");
-  }
+    0%, 10% {
+        background-image: url('images/cars/fortuner.png');
+    }
+    10.01%, 20% {
+        background-image: url('images/cars/roxx.png');
+    }
+    20.01%, 30% {
+        background-image: url('images/cars/scorpio_s11.png');
+    }
+    30.01%, 40% {
+        background-image: url('images/cars/scorpion.png');
+    }
+    40.01%, 50% {
+        background-image: url('images/cars/thar.png');
+    }
+    50.01%, 60% {
+        background-image: url('images/cars/xuv700.png');
+    }
+    60.01%, 70% {
+        background-image: url('images/cars/safari.png');
+    }
+    70.01%, 80% {
+        background-image: url('images/cars/creta.png');
+    }
+    80.01%, 90% {
+        background-image: url('images/cars/compass.png');
+    }
+    90.01%, 100% {
+        background-image: url('images/cars/scorpion.png');
+    }
 }
+
 
 /* MEDIA QUERY FOR MOBILE RESPONSIVENESS */
 
@@ -374,11 +333,8 @@ h2 {
 
 /* 🖱️ Hover Effect: Pop-Up and Glow */
 .hero-btn:hover {
-    /* 1. Pop-Up/Lift Effect: Lifts the button 5 pixels up */
     transform: translateY(-5px); 
     
-    /* 2. Glow Effect: Adds a large, colorful shadow */
-    /* Use your accent color (#f98203) for the glow */
     box-shadow: 
         0 8px 15px rgba(0, 0, 0, 0.77), /* Standard larger shadow for lift */
         0 0 20px rgba(249, 130, 3, 0.79); /* The colorful glow */
@@ -394,6 +350,7 @@ h2 {
     .hero-btn {
         padding: 10px 20px;
         font-size: 0.9rem;
+        position: relative;
     }
     
     .hero-btn:active {
