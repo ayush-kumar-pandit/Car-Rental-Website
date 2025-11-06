@@ -351,6 +351,7 @@ h2 {
         padding: 10px 20px;
         font-size: 0.9rem;
         position: relative;
+        bottom: 4rem;
     }
     
     .hero-btn:active {
