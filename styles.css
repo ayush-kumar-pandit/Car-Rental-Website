@@ -356,3 +356,7 @@ h2 {
         border-bottom: none;
     }
 }
+.feature-wrapper {
+  background-color: #2c2f35;
+  margin-top: 0% auto;
+}
