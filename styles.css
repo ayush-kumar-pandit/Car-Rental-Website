@@ -1,7 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Momo+Trust+Display&display=swap");
 
-/* GLOBAL STYLES */
+/* --------------------------------------
+ * GLOBAL STYLES
+ * -------------------------------------- */
 body,
 h1,
 h2 {
@@ -10,10 +12,17 @@ h2 {
     Arial, sans-serif;
 }
 
-/* HERO SECTION */
+/* Ensures the entire page background is dark */
+body {
+    background-color: #2c2f35;
+}
+
+/* --------------------------------------
+ * HERO SECTION - FIXES FOR BLACK BARS APPLIED
+ * -------------------------------------- */
 .hero-section {
   position: relative;
-  height: 90vh;
+  height: 100vh; /* FIX: Changed from 90vh to 100vh to fully cover viewport */
   width: 100%;
   overflow: hidden;
   display: flex;
@@ -27,7 +36,7 @@ h2 {
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%;
+  height: 100%; 
   z-index: 1;
 }
 
@@ -35,6 +44,8 @@ h2 {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  min-height: 100%; 
+  min-width: 100%; /* FIX: Ensures video stretches to cover all edges */
 }
 
 .video-overlay {
@@ -66,7 +77,6 @@ h2 {
   font-weight: 400;
 }
 
-/* WELCOME AREA (PILL SHAPE) */
 #welcome_area {
   background-color: rgba(255, 253, 253, 0.19);
   width: 70%;
@@ -93,13 +103,11 @@ h2 {
   color: #fff;
 }
 
-/* CORNER PATTERN (ANIMATED SLIDESHOW) */
 .corner-pattern {
   position: absolute;
   bottom: 0;
   right: 0;
   z-index: 3;
-  /* Base size for desktop */
   width: 35rem;
   height: 25rem;
   background-image: url("images/cars/thar.png");
@@ -110,75 +118,30 @@ h2 {
   animation: imageSlideshow 30s infinite;
 }
 
-/* KEYFRAMES - CORRECTED FOR SMOOTH TRANSITION */
 @keyframes imageSlideshow {
-  0%,
-  10% {
-    background-image: url("images/cars/fortuner.png");
-  }
-  10.01%,
-  20% {
-    background-image: url("images/cars/roxx.png");
-  }
-  20.01%,
-  30% {
-    background-image: url("images/cars/scorpio_s11.png");
-  }
-  30.01%,
-  40% {
-    background-image: url("images/cars/scorpion.png");
-  }
-  40.01%,
-  50% {
-    background-image: url("images/cars/thar.png");
-  }
-  50.01%,
-  60% {
-    background-image: url("images/cars/xuv700.png");
-  }
-  60.01%,
-  70% {
-    background-image: url("images/cars/safari.png");
-  }
-  70.01%,
-  80% {
-    background-image: url("images/cars/creta.png");
-  }
-  80.01%,
-  90% {
-    background-image: url("images/cars/compass.png");
-  }
-  90.01%,
-  100% {
-    background-image: url("images/cars/scorpion.png");
-  }
+  0%, 10% { background-image: url("images/cars/fortuner.png"); }
+  10.01%, 20% { background-image: url("images/cars/roxx.png"); }
+  20.01%, 30% { background-image: url("images/cars/scorpio_s11.png"); }
+  30.01%, 40% { background-image: url("images/cars/scorpion.png"); }
+  40.01%, 50% { background-image: url("images/cars/thar.png"); }
+  50.01%, 60% { background-image: url("images/cars/xuv700.png"); }
+  60.01%, 70% { background-image: url("images/cars/safari.png"); }
+  70.01%, 80% { background-image: url("images/cars/creta.png"); }
+  80.01%, 90% { background-image: url("images/cars/compass.png"); }
+  90.01%, 100% { background-image: url("images/cars/scorpion.png"); }
 }
 
-/* MEDIA QUERY FOR MOBILE RESPONSIVENESS */
+/* HERO MOBILE FIXES */
 @media (max-width: 600px) {
   .hero-content {
     left: 5%;
-    top: 0; /* Changed from 10% to fix empty space issue */
+    top: 5%; /* Adjusted for better content placement on mobile */
     width: 90%;
   }
-
-  .hero-content h1 {
-    font-size: 2.5rem;
-  }
-
-  .hero-content h2 {
-    font-size: 1.2rem;
-  }
-
-  #welcome_area {
-    width: 90%;
-  }
-
-  #welcome_txt {
-    font-size: 1rem;
-  }
-
-  /* CORNER PATTERN: LARGER SIZE FOR MOBILE */
+  .hero-content h1 { font-size: 2.5rem; }
+  .hero-content h2 { font-size: 1.2rem; }
+  #welcome_area { width: 90%; }
+  #welcome_txt { font-size: 1rem; }
   .corner-pattern {
     width: 25rem;
     height: 17rem;
@@ -200,25 +163,15 @@ h2 {
   top: 2rem;
 }
 
-/* ADDED: Button Container for optional spacing */
 .button-container {
   margin-top: 30px;
   z-index: 4;
   position: relative;
 }
 
-#book-now {
-  position: relative;
-  top: 4rem;
-}
+#book-now { position: relative; top: 4rem; }
+#attach-car { position: relative; left: 2rem; top: 4rem; }
 
-#attach-car {
-  position: relative;
-  left: 2rem;
-  top: 4rem;
-}
-
-/* Base Button Styles */
 .hero-btn {
   display: inline-block;
   padding: 12px 30px;
@@ -227,18 +180,14 @@ h2 {
   text-transform: uppercase;
   text-decoration: none;
   color: #ffffff;
-  /* Ghost Button Appearance */
   border: 2px solid #ffffff;
   border-radius: 999px;
-  /* Positioning context for the background fill */
   position: relative;
   overflow: hidden;
   z-index: 1;
-  /* Smooth transitions for all properties */
   transition: all 0.3s ease-in-out;
 }
 
-/* 🖱️ Hover Effect: Pop-Up and Glow */
 .hero-btn:hover {
   transform: translateY(-5px);
   box-shadow: 0 8px 15px rgba(0, 0, 0, 0.77),
@@ -246,11 +195,8 @@ h2 {
   border-color: #f98203;
 }
 
-/* Mobile Adjustments */
 @media (max-width: 600px) {
-  .button-container {
-    margin-top: 20px;
-  }
+  .button-container { margin-top: 20px; }
   .hero-btn {
     padding: 10px 20px;
     font-size: 0.9rem;
@@ -262,101 +208,104 @@ h2 {
   }
 }
 
-/* General Styling for the Container */
-.features-section {
-    display: flex; /* Enables Flexbox layout */
-    justify-content: center;
-    align-items: stretch; /* Makes sure all boxes stretch to the same height */
-    max-width: 1200px; /* Limit the max width for better appearance */
-    margin: 50px auto; /* Center the container on the page */
-    background-color: #2c2f35; /* Dark background color for the overall container area */
-    border-radius: 40px; /* Rounded corners for the entire section */
-    border: 2px solid rgb(78, 76, 76);
-    overflow: hidden; /* Ensures the rounded corners are respected */
-    color: #ffffff; /* Default text color */
-    font-family: sans-serif; /* Use a common font */
+/* --------------------------------------
+ * FEATURE SECTION STYLES
+ * -------------------------------------- */
+
+.feature-wrapper {
+  background-color: #2c2f35;
+  padding: 40px 0;
 }
 
-/* Styling for Individual Feature Boxes */
+.features-section {
+    display: flex; 
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: stretch;
+    max-width: 1200px; 
+    margin: 50px auto; 
+    background-color: #2c2f35; 
+    border-radius: 40px; 
+    border: 2px solid rgb(112, 114, 119); 
+    overflow: hidden; 
+    color: #ffffff;
+    font-family: sans-serif; 
+    padding: 0 15px;
+}
+
 .feature-box {
-    flex: 1; /* Allows each box to take up equal space */
+    flex: 1 1 25%;
+    min-width: 200px;
     padding: 30px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     transition: background-color 0.3s;
-    border-right: 1px solid rgba(255, 255, 255, 0.08); /* Light vertical separator line */
+    border-right: 1px solid rgba(255, 255, 255, 0.08);
+    border-bottom: none;
 }
 
-/* Remove border from the last box */
 .features-section .feature-box:last-child {
     border-right: none;
 }
 
-/* Specific background color for the 'Fully Insured' box */
 .feature-box.primary-bg {
-    background-color: #3b424a; /* Darker, distinct background color */
+    background-color: #3b424a;
 }
 
-/* Icon and Title Grouping */
 .icon-title-group {
     margin-bottom: 20px;
 }
 
-/* Icon Styling (Using Text/Emoji placeholders for simplicity) */
 .icon {
     font-size: 36px;
     margin-bottom: 10px;
     display: block;
-    color: #6c757d; /* Lighter color for the icon */
-    /* If you use an icon library (like Font Awesome), you'd style the <i> element here */
+    color: #ffffff;
 }
 
-/* Title Styling */
 .title {
     font-size: 1.5rem;
     font-weight: bold;
     margin: 0;
 }
 
-/* Description Styling */
 .description {
     font-size: 0.95rem;
     line-height: 1.5;
-    color: #b0b4b8; /* Slightly muted text color */
+    color: #b0b4b8;
 }
 
-/* Media Query for Responsiveness (Optional but recommended) */
-@media (max-width: 900px) {
-    .features-section {
-        flex-wrap: wrap; /* Wrap boxes onto multiple lines */
+/* --------------------------------------
+ * Responsive Layout (Media Queries)
+ * -------------------------------------- */
+
+/* Tablet & Medium Screens (2 columns) */
+@media (max-width: 1024px) {
+    .feature-box {
+        flex: 1 1 50%; 
+        border-right: 1px solid rgba(255, 255, 255, 0.08);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08); 
     }
 
-    .feature-box {
-        flex: 1 1 45%; /* Two boxes per row on tablets/small screens */
-        border-right: none; /* Remove vertical line when wrapped */
-        border-bottom: 1px solid rgba(255, 255, 255, 0.08); /* Add horizontal line */
+    .features-section .feature-box:nth-child(2n) {
+        border-right: none;
     }
     
-    .features-section .feature-box:nth-last-child(2) {
-        border-right: none; /* Fix border on the second-to-last box */
-    }
-
-    .features-section .feature-box:last-child {
-        border-bottom: none; /* Remove bottom line from the last box */
-    }
-}
-
-@media (max-width: 600px) {
-    .feature-box {
-        flex: 1 1 100%; /* One box per row on mobile */
-    }
-    
-    .features-section .feature-box:last-child {
+    .features-section .feature-box:nth-last-child(-n + 2) {
         border-bottom: none;
     }
 }
-.feature-wrapper {
-  background-color: #2c2f35;
-  margin-top: 0% auto;
+
+/* Mobile Screens (1 column) */
+@media (max-width: 650px) {
+    .feature-box {
+        flex: 1 1 100%; 
+        border-right: none !important;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08); 
+    }
+
+    .features-section .feature-box:last-child {
+        border-bottom: none;
+    }
 }
