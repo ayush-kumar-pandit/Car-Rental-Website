@@ -261,3 +261,98 @@ h2 {
     box-shadow: none;
   }
 }
+
+/* General Styling for the Container */
+.features-section {
+    display: flex; /* Enables Flexbox layout */
+    justify-content: center;
+    align-items: stretch; /* Makes sure all boxes stretch to the same height */
+    max-width: 1200px; /* Limit the max width for better appearance */
+    margin: 50px auto; /* Center the container on the page */
+    background-color: #2c2f35; /* Dark background color for the overall container area */
+    border-radius: 40px; /* Rounded corners for the entire section */
+    border: 2px solid rgb(78, 76, 76);
+    overflow: hidden; /* Ensures the rounded corners are respected */
+    color: #ffffff; /* Default text color */
+    font-family: sans-serif; /* Use a common font */
+}
+
+/* Styling for Individual Feature Boxes */
+.feature-box {
+    flex: 1; /* Allows each box to take up equal space */
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: background-color 0.3s;
+    border-right: 1px solid rgba(255, 255, 255, 0.08); /* Light vertical separator line */
+}
+
+/* Remove border from the last box */
+.features-section .feature-box:last-child {
+    border-right: none;
+}
+
+/* Specific background color for the 'Fully Insured' box */
+.feature-box.primary-bg {
+    background-color: #3b424a; /* Darker, distinct background color */
+}
+
+/* Icon and Title Grouping */
+.icon-title-group {
+    margin-bottom: 20px;
+}
+
+/* Icon Styling (Using Text/Emoji placeholders for simplicity) */
+.icon {
+    font-size: 36px;
+    margin-bottom: 10px;
+    display: block;
+    color: #6c757d; /* Lighter color for the icon */
+    /* If you use an icon library (like Font Awesome), you'd style the <i> element here */
+}
+
+/* Title Styling */
+.title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 0;
+}
+
+/* Description Styling */
+.description {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    color: #b0b4b8; /* Slightly muted text color */
+}
+
+/* Media Query for Responsiveness (Optional but recommended) */
+@media (max-width: 900px) {
+    .features-section {
+        flex-wrap: wrap; /* Wrap boxes onto multiple lines */
+    }
+
+    .feature-box {
+        flex: 1 1 45%; /* Two boxes per row on tablets/small screens */
+        border-right: none; /* Remove vertical line when wrapped */
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08); /* Add horizontal line */
+    }
+    
+    .features-section .feature-box:nth-last-child(2) {
+        border-right: none; /* Fix border on the second-to-last box */
+    }
+
+    .features-section .feature-box:last-child {
+        border-bottom: none; /* Remove bottom line from the last box */
+    }
+}
+
+@media (max-width: 600px) {
+    .feature-box {
+        flex: 1 1 100%; /* One box per row on mobile */
+    }
+    
+    .features-section .feature-box:last-child {
+        border-bottom: none;
+    }
+}
