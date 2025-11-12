@@ -209,7 +209,7 @@ body {
 }
 
 /* --------------------------------------
- * FEATURE SECTION STYLES (RESPONSIVENESS RE-INTRODUCED)
+ * FEATURE SECTION STYLES (INCREASED SIZE)
  * -------------------------------------- */
 
 .feature-wrapper {
@@ -219,14 +219,14 @@ body {
 
 .features-section {
     display: flex; 
-    flex-wrap: nowrap; /* Default: Keeps it on one line on desktop */
+    flex-wrap: nowrap; 
     justify-content: center;
     align-items: stretch;
-    max-width: 1000px; /* Compact size */
-    margin: 30px auto; 
+    max-width: 1200px; /* INCREASED: Max width set back to 1200px */
+    margin: 40px auto; /* Increased vertical margin slightly */
     background-color: #2c2f35; 
-    border-radius: 10px; 
-    border: none; 
+    border-radius: 50px; 
+    border: 2px solid rgb(133, 132, 131); 
     overflow: hidden; 
     color: #ffffff;
     font-family: sans-serif; 
@@ -234,9 +234,9 @@ body {
 }
 
 .feature-box {
-    flex: 1 0 200px; /* Keeps the base width compact */
+    flex: 1 0 250px; /* Increased base width of each box */
     min-width: 0;
-    padding: 25px 20px;
+    padding: 30px 25px; /* Increased padding */
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -254,25 +254,25 @@ body {
 }
 
 .icon-title-group {
-    margin-bottom: 15px; 
+    margin-bottom: 20px; /* Increased spacing */
 }
 
 .icon {
-    font-size: 30px; 
-    margin-bottom: 5px;
+    font-size: 36px; /* Increased icon size */
+    margin-bottom: 10px;
     display: block;
     color: #ffffff;
 }
 
 .title {
-    font-size: 1.3rem; 
+    font-size: 1.5rem; /* Increased title size */
     font-weight: bold;
     margin: 0;
 }
 
 .description {
-    font-size: 0.85rem; 
-    line-height: 1.4;
+    font-size: 0.95rem; /* Increased description text size */
+    line-height: 1.5;
     color: #b0b4b8;
 }
 
@@ -280,11 +280,11 @@ body {
  * RESPONSIVENESS RE-INTRODUCED
  * -------------------------------------- */
 
-/* Tablet & Smaller Desktop (Allow horizontal scrolling if necessary) */
-@media (max-width: 1050px) {
-    /* Set a specific width to ensure all four fit on one line initially, but shrink slightly */
+/* Tablet & Smaller Desktop */
+@media (max-width: 1250px) {
+    /* Allow shrinking slightly but keep on one line */
     .features-section {
-        max-width: 850px; 
+        max-width: 95%; 
     }
 }
 
@@ -292,19 +292,19 @@ body {
 /* Mobile Screens (Single Column Layout) */
 @media (max-width: 600px) {
     .features-section {
-        flex-wrap: wrap; /* CRITICAL FIX: Allows boxes to wrap */
+        flex-wrap: wrap; 
         max-width: 90%;
         margin: 30px auto;
         padding: 0;
     }
 
     .feature-box {
-        flex: 1 1 100%; /* Forces one box per row */
-        border-right: none; /* Removes vertical separator */
-        border-bottom: 1px solid rgba(255, 255, 255, 0.08); /* Adds horizontal separator */
+        flex: 1 1 100%; 
+        border-right: none; 
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08); 
     }
 
     .features-section .feature-box:last-child {
-        border-bottom: none; /* Removes bottom line from the last box */
+        border-bottom: none; 
     }
 }
