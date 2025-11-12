@@ -209,21 +209,21 @@ body {
 }
 
 /* --------------------------------------
- * FEATURE SECTION STYLES (MODIFIED)
+ * FEATURE SECTION STYLES (RESPONSIVENESS RE-INTRODUCED)
  * -------------------------------------- */
 
 .feature-wrapper {
   background-color: #2c2f35;
-  padding: 30px 0; /* Reduced wrapper padding */
+  padding: 30px 0; 
 }
 
 .features-section {
     display: flex; 
-    flex-wrap: nowrap; /* CRITICAL FIX: Forces content onto a single line */
+    flex-wrap: nowrap; /* Default: Keeps it on one line on desktop */
     justify-content: center;
     align-items: stretch;
-    max-width: 1000px; /* Reduced max-width for overall smaller size */
-    margin: 30px auto; /* Reduced vertical margin */
+    max-width: 1000px; /* Compact size */
+    margin: 30px auto; 
     background-color: #2c2f35; 
     border-radius: 10px; 
     border: none; 
@@ -234,10 +234,9 @@ body {
 }
 
 .feature-box {
-    /* Reduced flex-basis to make each box smaller */
-    flex: 1 0 200px; 
-    min-width: 0; /* Allows boxes to shrink */
-    padding: 25px 20px; /* Reduced padding for smaller size */
+    flex: 1 0 200px; /* Keeps the base width compact */
+    min-width: 0;
+    padding: 25px 20px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -255,24 +254,57 @@ body {
 }
 
 .icon-title-group {
-    margin-bottom: 15px; /* Reduced spacing */
+    margin-bottom: 15px; 
 }
 
 .icon {
-    font-size: 30px; /* Slightly smaller icon */
+    font-size: 30px; 
     margin-bottom: 5px;
     display: block;
     color: #ffffff;
 }
 
 .title {
-    font-size: 1.3rem; /* Slightly smaller title */
+    font-size: 1.3rem; 
     font-weight: bold;
     margin: 0;
 }
 
 .description {
-    font-size: 0.85rem; /* Smaller description text */
+    font-size: 0.85rem; 
     line-height: 1.4;
     color: #b0b4b8;
+}
+
+/* --------------------------------------
+ * RESPONSIVENESS RE-INTRODUCED
+ * -------------------------------------- */
+
+/* Tablet & Smaller Desktop (Allow horizontal scrolling if necessary) */
+@media (max-width: 1050px) {
+    /* Set a specific width to ensure all four fit on one line initially, but shrink slightly */
+    .features-section {
+        max-width: 850px; 
+    }
+}
+
+
+/* Mobile Screens (Single Column Layout) */
+@media (max-width: 600px) {
+    .features-section {
+        flex-wrap: wrap; /* CRITICAL FIX: Allows boxes to wrap */
+        max-width: 90%;
+        margin: 30px auto;
+        padding: 0;
+    }
+
+    .feature-box {
+        flex: 1 1 100%; /* Forces one box per row */
+        border-right: none; /* Removes vertical separator */
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08); /* Adds horizontal separator */
+    }
+
+    .features-section .feature-box:last-child {
+        border-bottom: none; /* Removes bottom line from the last box */
+    }
 }
