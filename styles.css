@@ -447,22 +447,25 @@ body {
     font-size: 1.2rem;
 }
 
+/* MODIFIED: Styling for the Book Now button to match the pill shape */
 .book-now-btn {
     display: inline-flex;
     align-items: center;
     gap: 10px;
-    background-color: #f98203; 
+    background-color: #f98203; /* Orange background */
     color: #ffffff;
     padding: 15px 30px;
-    border-radius: 50px;
+    border-radius: 50px; /* CRITICAL CHANGE: Sets the perfect pill/capsule shape */
     text-decoration: none;
     font-weight: bold;
     font-size: 1rem;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 5px 15px rgba(249, 130, 3, 0.4); /* Added soft orange shadow */
 }
 
 .book-now-btn:hover {
     background-color: #e07000; 
+    box-shadow: 0 7px 20px rgba(249, 130, 3, 0.6); /* Enhanced shadow on hover */
 }
 
 /* --------------------------------------
