@@ -243,9 +243,7 @@ body {
     color: #b0b4b8;
 }
 
-/* --------------------------------------
- * WHY CHOOSE SECTION STYLES (BACKGROUND FIXED)
- * -------------------------------------- */
+
 .why-choose-section-wrapper {
     background-color: #fdfdfd;
     padding: 60px 20px;
@@ -291,6 +289,8 @@ body {
     margin-bottom: 20px; 
     color: #8c8c8c;
     font-weight: bold;
+    position: relative;
+    left: 25rem;
 }
 
 .stat-item {
