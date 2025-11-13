@@ -247,7 +247,7 @@ body {
  * WHY CHOOSE SECTION STYLES (BACKGROUND FIXED)
  * -------------------------------------- */
 .why-choose-section-wrapper {
-    background-color: #30353c; /* FIXED: Slightly lighter background color */
+    background-color: #fdfdfd;
     padding: 60px 20px;
     display: flex;
     justify-content: center;
@@ -285,7 +285,6 @@ body {
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
 }
 
-/* STATS BAR */
 .stats-bar {
     display: flex;
     gap: 30px;
@@ -310,7 +309,6 @@ body {
     color: #b0b4b8;
 }
 
-/* IMAGE STACK */
 .image-stack-container {
     position: relative;
     width: 350px; 
@@ -366,7 +364,6 @@ body {
     font-size: 1.8rem;
 }
 
-/* TESTIMONIAL CARD */
 .testimonial-card {
     position: absolute;
     bottom: -30px; 
@@ -393,7 +390,6 @@ body {
     color: #b0b4b8;
 }
 
-/* RIGHT CONTENT */
 .right-content .about-tag {
     display: inline-flex;
     align-items: center;
@@ -467,19 +463,12 @@ body {
     box-shadow: 0 7px 20px rgba(249, 130, 3, 0.6); 
 }
 
-/* --------------------------------------
- * RESPONSIVENESS (CONSOLIDATED)
- * -------------------------------------- */
-
-/* Desktop/Large Tablet */
 @media (max-width: 1250px) {
-    /* Feature Section Scaling */
     .features-section {
         max-width: 95%; 
     }
 }
 
-/* Tablet & Smaller Desktop - Why Choose Stacks */
 @media (max-width: 1050px) {
     .why-choose-section {
         flex-direction: column; 
@@ -500,9 +489,7 @@ body {
     }
 }
 
-/* Mobile Screens (<= 600px) */
 @media (max-width: 600px) {
-    /* Hero Section Mobile Fixes */
     .hero-content {
         left: 5%;
         top: 5%;
@@ -531,7 +518,6 @@ body {
         box-shadow: none;
     }
 
-    /* Feature Section Single Column */
     .features-section {
         flex-wrap: wrap; 
         max-width: 90%;
@@ -549,7 +535,6 @@ body {
         border-bottom: none; 
     }
 
-    /* Why Choose Section Mobile Fixes */
     .why-choose-section-wrapper {
         padding: 40px 10px;
     }
