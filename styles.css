@@ -9,7 +9,6 @@ h2 {
         Arial, sans-serif;
 }
 
-/* --- Hero Section Styles (Retaining original video look) --- */
 .hero-section {
     position: relative;
     height: 100vh;
@@ -19,7 +18,6 @@ h2 {
     color: #ffffff;
 }
 
-/* VIDEO BACKGROUND (Ensures full coverage) */
 .video-background-container {
     position: absolute;
     top: 0;
@@ -46,7 +44,6 @@ h2 {
     z-index: 2;
 }
 
-/* HERO CONTENT */
 .hero-content {
     position: relative;
     left: 10%;
@@ -163,7 +160,6 @@ h2 {
     border-color: #f98203;
 }
 
-/* --- Feature Section Styles --- */
 .feature-wrapper {
     background-color: #2c2f35;
     padding: 30px 0;
@@ -228,10 +224,9 @@ h2 {
     color: #b0b4b8;
 }
 
-/* --- Fleet Section Styles --- */
 
 .fleet-section-wrapper {
-    background-color: #fdfdfd; /* White/Light background */
+    background-color: #fdfdfd;  
     padding: 80px 20px;
     text-align: center;
 }
@@ -244,7 +239,7 @@ h2 {
 .fleet-section h2 {
     font-size: 2.5rem;
     margin-bottom: 10px;
-    color: #1f2226; /* Dark text */
+    color: #1f2226; 
 }
 
 .fleet-section p.subtitle {
@@ -264,7 +259,7 @@ h2 {
     background-color: #ffffff;
     border-radius: 10px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    flex: 1 1 300px; /* Max 3 per row on large screens */
+    flex: 1 1 300px; 
     max-width: 350px;
     overflow: hidden;
     text-align: left;
@@ -322,14 +317,14 @@ h2 {
 }
 
 .detail-item i {
-    color: #f98203; /* Accent color for icons */
+    color: #f98203;
     font-size: 1.1rem;
 }
 
 .car-price {
     font-size: 1.8rem;
     font-weight: bold;
-    color: #f98203; /* Accent color for price */
+    color: #f98203; 
     margin-bottom: 15px;
     display: block;
 }
@@ -358,7 +353,6 @@ h2 {
 }
 
 
-/* --- Why Choose Us Section Styles --- */
 .why-choose-section-wrapper {
     background-color: #fdfdfd;
     padding: 60px 20px;
@@ -603,7 +597,6 @@ h2 {
     box-shadow: 0 7px 20px rgba(249, 130, 3, 0.6);
 }
 
-/* --- Testimonial Section Styles --- */
 
 .testimonial-section-wrapper {
     background-color: #2c2f35;
@@ -696,7 +689,6 @@ h2 {
     color: #b0b4b8;
 }
 
-/* --- Call to Action (CTA) Section Styles --- */
 
 .cta-section-wrapper {
     background-color: #f98203;
@@ -740,7 +732,6 @@ h2 {
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
 }
 
-/* --- Footer Styles --- */
 
 .footer-wrapper {
     background-color: #1f2226;
@@ -846,7 +837,6 @@ h2 {
     text-decoration: none;
 }
 
-/* --- Media Queries --- */
 
 @media (max-width: 1250px) {
     .features-section {
@@ -919,7 +909,6 @@ h2 {
         padding: 12px 30px;
         font-size: 1rem;
     }
-    /* Fleet section media query */
     .car-grid {
         gap: 20px;
     }
@@ -939,7 +928,6 @@ h2 {
         width: 90%;
     }
 
-    /* VIDEO Background container change */
     .video-background-container {
         position: absolute;
         width: 100%;
