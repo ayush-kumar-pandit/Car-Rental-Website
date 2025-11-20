@@ -25,7 +25,7 @@ h2 {
     width: 100%;
     height: 100%;
     z-index: 1;
-    overflow: hidden; 
+    overflow: hidden;
 }
 
 .video-background-container video {
@@ -104,16 +104,46 @@ h2 {
 }
 
 @keyframes imageSlideshow {
-    0%, 10% { background-image: url("images/cars/fortuner.png"); }
-    10.01%, 20% { background-image: url("images/cars/roxx.png"); }
-    20.01%, 30% { background-image: url("images/cars/scorpio_s11.png"); }
-    30.01%, 40% { background-image: url("images/cars/scorpion.png"); }
-    40.01%, 50% { background-image: url("images/cars/thar.png"); }
-    50.01%, 60% { background-image: url("images/cars/xuv700.png"); }
-    60.01%, 70% { background-image: url("images/cars/safari.png"); }
-    70.01%, 80% { background-image: url("images/cars/creta.png"); }
-    80.01%, 90% { background-image: url("images/cars/compass.png"); }
-    90.01%, 100% { background-image: url("images/cars/scorpion.png"); }
+    0%,
+    10% {
+        background-image: url("images/cars/fortuner.png");
+    }
+    10.01%,
+    20% {
+        background-image: url("images/cars/roxx.png");
+    }
+    20.01%,
+    30% {
+        background-image: url("images/cars/scorpio_s11.png");
+    }
+    30.01%,
+    40% {
+        background-image: url("images/cars/scorpion.png");
+    }
+    40.01%,
+    50% {
+        background-image: url("images/cars/thar.png");
+    }
+    50.01%,
+    60% {
+        background-image: url("images/cars/xuv700.png");
+    }
+    60.01%,
+    70% {
+        background-image: url("images/cars/safari.png");
+    }
+    70.01%,
+    80% {
+        background-image: url("images/cars/creta.png");
+    }
+    80.01%,
+    90% {
+        background-image: url("images/cars/compass.png");
+    }
+    90.01%,
+    100% {
+        background-image: url("images/cars/scorpion.png");
+    }
 }
 
 .gradient-text {
@@ -134,8 +164,15 @@ h2 {
     position: relative;
 }
 
-#book-now { position: relative; top: 4rem; }
-#attach-car { position: relative; left: 2rem; top: 4rem; }
+#book-now {
+    position: relative;
+    top: 4rem;
+}
+#attach-car {
+    position: relative;
+    left: 2rem;
+    top: 4rem;
+}
 
 .hero-btn {
     display: inline-block;
@@ -226,7 +263,7 @@ h2 {
 
 
 .fleet-section-wrapper {
-    background-color: #fdfdfd;  
+    background-color: #fdfdfd;
     padding: 80px 20px;
     text-align: center;
 }
@@ -239,7 +276,7 @@ h2 {
 .fleet-section h2 {
     font-size: 2.5rem;
     margin-bottom: 10px;
-    color: #1f2226; 
+    color: #1f2226;
 }
 
 .fleet-section p.subtitle {
@@ -259,7 +296,7 @@ h2 {
     background-color: #ffffff;
     border-radius: 10px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    flex: 1 1 300px; 
+    flex: 1 1 300px;
     max-width: 350px;
     overflow: hidden;
     text-align: left;
@@ -272,6 +309,7 @@ h2 {
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
 }
 
+/* --- SLIDESHOW CSS START (Fleet Section) --- */
 .car-image-container {
     width: 100%;
     height: 200px;
@@ -281,15 +319,58 @@ h2 {
 }
 
 .car-image-container img {
+    /* Stack images absolutely inside the relative container */
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: transform 0.5s ease;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0; /* Hidden by default, controlled by animation */
+    transition: opacity 1.5s ease-in-out;
+    transform: none;
 }
 
+/* Ensure no scale effect on hover, as it interferes with the slideshow */
 .car-card:hover .car-image-container img {
-    transform: scale(1.05);
+    transform: none;
 }
+
+@keyframes carSlideshow {
+    /* Image 1: Visible from 0% to 10%, fades out by 15% */
+    0% { opacity: 1; }
+    10% { opacity: 1; }
+    15% { opacity: 0; }
+    33% { opacity: 0; } 
+
+    /* Image 2: Visible from 33.1% to 43.1%, fades out by 48.1% */
+    33.1% { opacity: 1; }
+    43.1% { opacity: 1; }
+    48.1% { opacity: 0; }
+    66% { opacity: 0; }
+
+    /* Image 3: Visible from 66.1% to 76.1%, fades out by 81.1% */
+    66.1% { opacity: 1; }
+    76.1% { opacity: 1; }
+    81.1% { opacity: 0; }
+    100% { opacity: 0; }
+}
+
+.slideshow-img:nth-child(1) {
+    animation: carSlideshow 9s infinite; /* 3 images * 3 seconds each = 9 seconds cycle */
+    opacity: 1; /* Default visibility before animation starts */
+}
+
+.slideshow-img:nth-child(2) {
+    animation: carSlideshow 9s infinite;
+    animation-delay: 3s; /* Starts 3 seconds into the cycle */
+}
+
+.slideshow-img:nth-child(3) {
+    animation: carSlideshow 9s infinite;
+    animation-delay: 6s; /* Starts 6 seconds into the cycle */
+}
+/* --- SLIDESHOW CSS END --- */
 
 .car-info {
     padding: 20px;
@@ -324,7 +405,7 @@ h2 {
 .car-price {
     font-size: 1.8rem;
     font-weight: bold;
-    color: #f98203; 
+    color: #f98203;
     margin-bottom: 15px;
     display: block;
 }
@@ -633,7 +714,7 @@ h2 {
     background-color: #3b424a;
     border-radius: 15px;
     padding: 30px;
-    flex: 1 1 300px; 
+    flex: 1 1 300px;
     max-width: 350px;
     text-align: left;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
@@ -935,10 +1016,18 @@ h2 {
         z-index: 1;
     }
 
-    .hero-content h1 { font-size: 2.5rem; }
-    .hero-content h2 { font-size: 1.2rem; }
-    #welcome_area { width: 90%; }
-    #welcome_txt { font-size: 1rem; }
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+    .hero-content h2 {
+        font-size: 1.2rem;
+    }
+    #welcome_area {
+        width: 90%;
+    }
+    #welcome_txt {
+        font-size: 1rem;
+    }
     .corner-pattern {
         width: 25rem;
         height: 17rem;
@@ -947,7 +1036,9 @@ h2 {
         opacity: 1;
     }
 
-    .button-container { margin-top: 20px; }
+    .button-container {
+        margin-top: 20px;
+    }
     .hero-btn {
         padding: 10px 20px;
         font-size: 0.9rem;
