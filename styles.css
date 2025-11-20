@@ -5,7 +5,7 @@ body,
 h1,
 h2 {
     margin: 0;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
+    font-family: -apple-system, BlinkMacMacSystemFont, "Segoe UI", Roboto, Helvetica,
         Arial, sans-serif;
 }
 
@@ -336,39 +336,62 @@ h2 {
     transform: none;
 }
 
+/* 5 Images: 15 seconds total cycle (100% / 5 = 20% visibility per image block) */
 @keyframes carSlideshow {
-    /* Image 1: Visible from 0% to 10%, fades out by 15% */
+    /* Image 1 (0% - 20%) */
     0% { opacity: 1; }
-    10% { opacity: 1; }
-    15% { opacity: 0; }
-    33% { opacity: 0; } 
+    4% { opacity: 1; }
+    7% { opacity: 0; } /* Start fade out */
+    20% { opacity: 0; }
 
-    /* Image 2: Visible from 33.1% to 43.1%, fades out by 48.1% */
-    33.1% { opacity: 1; }
-    43.1% { opacity: 1; }
-    48.1% { opacity: 0; }
-    66% { opacity: 0; }
+    /* Image 2 (20% - 40%) */
+    20.1% { opacity: 1; }
+    24.1% { opacity: 1; }
+    27.1% { opacity: 0; }
+    40% { opacity: 0; }
 
-    /* Image 3: Visible from 66.1% to 76.1%, fades out by 81.1% */
-    66.1% { opacity: 1; }
-    76.1% { opacity: 1; }
-    81.1% { opacity: 0; }
+    /* Image 3 (40% - 60%) */
+    40.1% { opacity: 1; }
+    44.1% { opacity: 1; }
+    47.1% { opacity: 0; }
+    60% { opacity: 0; }
+
+    /* Image 4 (60% - 80%) */
+    60.1% { opacity: 1; }
+    64.1% { opacity: 1; }
+    67.1% { opacity: 0; }
+    80% { opacity: 0; }
+
+    /* Image 5 (80% - 100%) */
+    80.1% { opacity: 1; }
+    84.1% { opacity: 1; }
+    87.1% { opacity: 0; }
     100% { opacity: 0; }
 }
 
 .slideshow-img:nth-child(1) {
-    animation: carSlideshow 9s infinite; /* 3 images * 3 seconds each = 9 seconds cycle */
+    animation: carSlideshow 15s infinite; /* Total duration is 15s */
     opacity: 1; /* Default visibility before animation starts */
 }
 
 .slideshow-img:nth-child(2) {
-    animation: carSlideshow 9s infinite;
-    animation-delay: 3s; /* Starts 3 seconds into the cycle */
+    animation: carSlideshow 15s infinite;
+    animation-delay: 3s; /* 15s / 5 = 3s delay per image */
 }
 
 .slideshow-img:nth-child(3) {
-    animation: carSlideshow 9s infinite;
-    animation-delay: 6s; /* Starts 6 seconds into the cycle */
+    animation: carSlideshow 15s infinite;
+    animation-delay: 6s; /* 3s * 2 */
+}
+
+.slideshow-img:nth-child(4) {
+    animation: carSlideshow 15s infinite;
+    animation-delay: 9s; /* 3s * 3 */
+}
+
+.slideshow-img:nth-child(5) {
+    animation: carSlideshow 15s infinite;
+    animation-delay: 12s; /* 3s * 4 */
 }
 /* --- SLIDESHOW CSS END --- */
 
