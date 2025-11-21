@@ -1,0 +1,197 @@
+/* Import main font styles */
+@import url("https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap");
+
+/* Re-setting header background for a dedicated page */
+.main-header.solid-bg {
+    position: relative;
+    background-color: #1f2226; 
+}
+
+/* --- Fleet Page Hero Section --- */
+.fleet-page-hero {
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('images/cars_overhead.jpg') center/cover;
+    height: 30vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    text-align: center;
+    padding-top: 50px; /* Space for the fixed header */
+}
+
+.fleet-page-hero h1 {
+    font-family: "Lora", serif;
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+.fleet-page-hero p {
+    font-size: 1.1rem;
+    color: #b0b4b8;
+}
+
+/* --- Main Content Layout (Sidebar + Grid) --- */
+.fleet-content-wrapper {
+    display: flex;
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+    gap: 30px;
+}
+
+.filter-sidebar {
+    flex: 0 0 280px; /* Fixed width sidebar */
+    background-color: #ffffff;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    height: fit-content;
+    border: 1px solid #ddd;
+}
+
+.filter-sidebar h3 {
+    font-size: 1.4rem;
+    color: #1f2226;
+    margin-bottom: 25px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.filter-group {
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #eee;
+}
+
+.filter-group:last-child {
+    border-bottom: none;
+}
+
+.filter-group h4 {
+    font-size: 1rem;
+    color: #f98203;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.filter-group label {
+    display: block;
+    font-size: 0.95rem;
+    margin-bottom: 8px;
+    color: #333;
+    cursor: pointer;
+}
+
+.filter-group input[type="checkbox"] {
+    margin-right: 8px;
+    accent-color: #f98203;
+}
+
+.apply-filter-btn {
+    width: 100%;
+    padding: 12px;
+    background-color: #1f2226;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.apply-filter-btn:hover {
+    background-color: #3b424a;
+}
+
+.car-listing {
+    flex: 1; /* Takes up remaining space */
+}
+
+/* --- Results Bar (Sorting) --- */
+.results-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #eee;
+}
+
+.results-bar p {
+    font-weight: bold;
+    color: #333;
+}
+
+.results-bar select {
+    padding: 8px 12px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+
+
+/* --- Car Grid (Reusing existing .car-card, .car-info, .car-details, etc. from styles.css) --- */
+
+.car-grid.full-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+/* --- Pagination --- */
+.pagination {
+    margin-top: 40px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+}
+
+.pagination a {
+    color: #f98203;
+    padding: 10px 15px;
+    text-decoration: none;
+    border: 1px solid #f98203;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.pagination a:hover:not(.current-page) {
+    background-color: #f98203;
+    color: white;
+}
+
+.pagination .current-page {
+    background-color: #f98203;
+    color: white;
+}
+
+
+/* --- Media Queries for responsiveness --- */
+
+@media (max-width: 900px) {
+    .fleet-content-wrapper {
+        flex-direction: column;
+        padding: 0 10px;
+    }
+
+    .filter-sidebar {
+        flex: 0 0 auto;
+        width: 100%;
+        margin-bottom: 20px;
+    }
+}
+
+@media (max-width: 600px) {
+    .fleet-page-hero h1 {
+        font-size: 2.5rem;
+    }
+    .fleet-page-hero p {
+        font-size: 1rem;
+    }
+    .car-grid.full-grid {
+        grid-template-columns: 1fr;
+    }
+}
