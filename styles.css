@@ -5,19 +5,24 @@ body,
 h1,
 h2 {
     margin: 0;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
-        Arial, sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
 }
 
-/* --- NEW HEADER STYLES --- */
+/* --- HEADER STYLES --- */
 .main-header {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     z-index: 10;
-    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background over video */
+    background-color: rgba(0, 0, 0, 0.5); /* Transparent for Home */
     padding: 15px 0;
+}
+
+/* Special class for Fleet page to have solid header */
+.main-header.solid-bg {
+    position: relative;
+    background-color: #1f2226; 
 }
 
 .header-content {
@@ -70,12 +75,10 @@ h2 {
 .book-now-header:hover {
     background-color: #e07000;
 }
-/* --- END NEW HEADER STYLES --- */
 
-
+/* --- HERO SECTION (HOME) --- */
 .hero-section {
     position: relative;
-    /* Adjusted height to accommodate header */
     height: 100vh; 
     width: 100vw;
     overflow: hidden;
@@ -112,9 +115,10 @@ h2 {
 .hero-content {
     position: relative;
     left: 10%;
-    top: 25%; /* Adjusted top position to accommodate new header */
+    top: 25%;
     z-index: 3;
     padding: 20px;
+    max-width: 800px;
 }
 
 .hero-content h1 {
@@ -129,13 +133,14 @@ h2 {
 
 #welcome_area {
     background-color: rgba(255, 253, 253, 0.19);
-    width: 70%;
+    width: fit-content;
     height: 3.2rem;
-    padding: 0.2rem 1rem;
+    padding: 0.2rem 1.5rem 0.2rem 1rem;
     display: flex;
     align-items: center;
     border-radius: 999px;
     margin-top: 1.5rem;
+    margin-bottom: 20px;
 }
 
 #welcome_img {
@@ -151,6 +156,7 @@ h2 {
     font-family: "Lora", serif;
     font-size: 1.4rem;
     color: #fff;
+    margin: 0;
 }
 
 .corner-pattern {
@@ -164,51 +170,20 @@ h2 {
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
-    opacity: 1;
     animation: imageSlideshow 30s infinite;
 }
 
 @keyframes imageSlideshow {
-    0%,
-    10% {
-        background-image: url("images/cars/fortuner.png");
-    }
-    10.01%,
-    20% {
-        background-image: url("images/cars/roxx.png");
-    }
-    20.01%,
-    30% {
-        background-image: url("images/cars/scorpio_s11.png");
-    }
-    30.01%,
-    40% {
-        background-image: url("images/cars/scorpion.png");
-    }
-    40.01%,
-    50% {
-        background-image: url("images/cars/thar.png");
-    }
-    50.01%,
-    60% {
-        background-image: url("images/cars/xuv700.png");
-    }
-    60.01%,
-    70% {
-        background-image: url("images/cars/safari.png");
-    }
-    70.01%,
-    80% {
-        background-image: url("images/cars/creta.png");
-    }
-    80.01%,
-    90% {
-        background-image: url("images/cars/compass.png");
-    }
-    90.01%,
-    100% {
-        background-image: url("images/cars/scorpion.png");
-    }
+    0%, 10% { background-image: url("images/cars/fortuner.png"); }
+    10.01%, 20% { background-image: url("images/cars/xuv700.png"); } /* Updated image names to be safer */
+    20.01%, 30% { background-image: url("images/cars/safari.png"); }
+    30.01%, 40% { background-image: url("images/cars/creta.png"); }
+    40.01%, 50% { background-image: url("images/cars/thar.png"); }
+    50.01%, 60% { background-image: url("images/cars/xuv700.png"); }
+    60.01%, 70% { background-image: url("images/cars/safari.png"); }
+    70.01%, 80% { background-image: url("images/cars/creta.png"); }
+    80.01%, 90% { background-image: url("images/cars/thar.png"); }
+    90.01%, 100% { background-image: url("images/cars/fortuner.png"); }
 }
 
 .gradient-text {
@@ -221,22 +196,15 @@ h2 {
     font-weight: bolder;
     position: relative;
     top: 2rem;
+    margin-bottom: 10px;
 }
 
 .button-container {
-    margin-top: 30px;
+    margin-top: 50px;
     z-index: 4;
     position: relative;
-}
-
-#book-now {
-    position: relative;
-    top: 4rem;
-}
-#attach-car {
-    position: relative;
-    left: 2rem;
-    top: 4rem;
+    display: flex;
+    gap: 20px;
 }
 
 .hero-btn {
@@ -250,18 +218,18 @@ h2 {
     border: 2px solid #ffffff;
     border-radius: 999px;
     position: relative;
-    overflow: hidden;
     z-index: 1;
     transition: all 0.3s ease-in-out;
 }
 
 .hero-btn:hover {
     transform: translateY(-5px);
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.77),
-        0 0 20px rgba(249, 130, 3, 0.79);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.77), 0 0 20px rgba(249, 130, 3, 0.79);
     border-color: #f98203;
+    color: #f98203;
 }
 
+/* --- FEATURES SECTION --- */
 .feature-wrapper {
     background-color: #2c2f35;
     padding: 30px 0;
@@ -279,7 +247,6 @@ h2 {
     border: 2px solid rgb(133, 132, 131);
     overflow: hidden;
     color: #ffffff;
-    font-family: sans-serif;
     padding: 0;
 }
 
@@ -292,7 +259,6 @@ h2 {
     justify-content: space-between;
     transition: background-color 0.3s;
     border-right: 1px solid rgba(255, 255, 255, 0.08);
-    border-bottom: none;
 }
 
 .features-section .feature-box:last-child {
@@ -326,7 +292,7 @@ h2 {
     color: #b0b4b8;
 }
 
-
+/* --- FLEET / CAR CARD STYLES --- */
 .fleet-section-wrapper {
     background-color: #fdfdfd;
     padding: 80px 20px;
@@ -374,7 +340,6 @@ h2 {
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
 }
 
-/* --- SLIDESHOW CSS START (Fleet Section) --- */
 .car-image-container {
     width: 100%;
     height: 200px;
@@ -384,81 +349,29 @@ h2 {
 }
 
 .car-image-container img {
-    /* Stack images absolutely inside the relative container */
     width: 100%;
     height: 100%;
     object-fit: cover;
     position: absolute;
     top: 0;
     left: 0;
-    opacity: 0; /* Hidden by default, controlled by animation */
-    transition: opacity 1.5s ease-in-out;
-    transform: none;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
 }
 
-/* Ensure no scale effect on hover, as it interferes with the slideshow */
-.car-card:hover .car-image-container img {
-    transform: none;
-}
-
-/* 5 Images: 15 seconds total cycle (100% / 5 = 20% visibility per image block) */
+/* Improved Slideshow Animation */
 @keyframes carSlideshow {
-    /* Image 1 (0% - 20%) */
     0% { opacity: 1; }
-    4% { opacity: 1; }
-    7% { opacity: 0; } /* Start fade out */
+    2.5% { opacity: 1; }
+    5% { opacity: 0; }
     20% { opacity: 0; }
-
-    /* Image 2 (20% - 40%) */
-    20.1% { opacity: 1; }
-    24.1% { opacity: 1; }
-    27.1% { opacity: 0; }
-    40% { opacity: 0; }
-
-    /* Image 3 (40% - 60%) */
-    40.1% { opacity: 1; }
-    44.1% { opacity: 1; }
-    47.1% { opacity: 0; }
-    60% { opacity: 0; }
-
-    /* Image 4 (60% - 80%) */
-    60.1% { opacity: 1; }
-    64.1% { opacity: 1; }
-    67.1% { opacity: 0; }
-    80% { opacity: 0; }
-
-    /* Image 5 (80% - 100%) */
-    80.1% { opacity: 1; }
-    84.1% { opacity: 1; }
-    87.1% { opacity: 0; }
-    100% { opacity: 0; }
 }
 
-.slideshow-img:nth-child(1) {
-    animation: carSlideshow 15s infinite; /* Total duration is 15s */
-    opacity: 1; /* Default visibility before animation starts */
-}
-
-.slideshow-img:nth-child(2) {
-    animation: carSlideshow 15s infinite;
-    animation-delay: 3s; /* 15s / 5 = 3s delay per image */
-}
-
-.slideshow-img:nth-child(3) {
-    animation: carSlideshow 15s infinite;
-    animation-delay: 6s; /* 3s * 2 */
-}
-
-.slideshow-img:nth-child(4) {
-    animation: carSlideshow 15s infinite;
-    animation-delay: 9s; /* 3s * 3 */
-}
-
-.slideshow-img:nth-child(5) {
-    animation: carSlideshow 15s infinite;
-    animation-delay: 12s; /* 3s * 4 */
-}
-/* --- SLIDESHOW CSS END --- */
+.slideshow-img:nth-child(1) { animation: carSlideshow 15s infinite; opacity: 1; }
+.slideshow-img:nth-child(2) { animation: carSlideshow 15s infinite; animation-delay: 3s; }
+.slideshow-img:nth-child(3) { animation: carSlideshow 15s infinite; animation-delay: 6s; }
+.slideshow-img:nth-child(4) { animation: carSlideshow 15s infinite; animation-delay: 9s; }
+.slideshow-img:nth-child(5) { animation: carSlideshow 15s infinite; animation-delay: 12s; }
 
 .car-info {
     padding: 20px;
@@ -521,7 +434,18 @@ h2 {
     background-color: #e07000;
 }
 
+/* CSS replacing Inline Styles */
+.view-all-container {
+    margin-top: 40px;
+    color: #666;
+}
+.view-all-link {
+    color: #f98203;
+    text-decoration: none;
+    font-weight: bold;
+}
 
+/* --- WHY CHOOSE US --- */
 .why-choose-section-wrapper {
     background-color: #fdfdfd;
     padding: 60px 20px;
@@ -561,7 +485,7 @@ h2 {
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
     position: relative;
     left: 2.5rem;
-    height: 55vh;
+    /* Removed fixed height for flexibility */
     width: 20vw;
 }
 
@@ -766,7 +690,7 @@ h2 {
     box-shadow: 0 7px 20px rgba(249, 130, 3, 0.6);
 }
 
-
+/* --- TESTIMONIALS --- */
 .testimonial-section-wrapper {
     background-color: #2c2f35;
     padding: 80px 20px;
@@ -858,7 +782,7 @@ h2 {
     color: #b0b4b8;
 }
 
-
+/* --- CTA SECTION --- */
 .cta-section-wrapper {
     background-color: #f98203;
     padding: 60px 20px;
@@ -901,7 +825,7 @@ h2 {
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
 }
 
-
+/* --- FOOTER --- */
 .footer-wrapper {
     background-color: #1f2226;
     color: #b0b4b8;
@@ -1006,6 +930,172 @@ h2 {
     text-decoration: none;
 }
 
+/* =========================================
+   FLEET PAGE SPECIFIC STYLES 
+   ========================================= */
+
+/* --- Fleet Page Hero Section --- */
+.fleet-page-hero {
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('images/cars_overhead.jpg') center/cover;
+    height: 30vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    text-align: center;
+    padding-top: 50px; /* Space for the fixed header */
+}
+
+.fleet-page-hero h1 {
+    font-family: "Lora", serif;
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+.fleet-page-hero p {
+    font-size: 1.1rem;
+    color: #b0b4b8;
+}
+
+/* --- Main Content Layout (Sidebar + Grid) --- */
+.fleet-content-wrapper {
+    display: flex;
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+    gap: 30px;
+}
+
+.filter-sidebar {
+    flex: 0 0 280px; /* Fixed width sidebar */
+    background-color: #ffffff;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    height: fit-content;
+    border: 1px solid #ddd;
+}
+
+.filter-sidebar h3 {
+    font-size: 1.4rem;
+    color: #1f2226;
+    margin-bottom: 25px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.filter-group {
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #eee;
+}
+
+.filter-group:last-child {
+    border-bottom: none;
+}
+
+.filter-group h4 {
+    font-size: 1rem;
+    color: #f98203;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.filter-group label {
+    display: block;
+    font-size: 0.95rem;
+    margin-bottom: 8px;
+    color: #333;
+    cursor: pointer;
+}
+
+.filter-group input[type="checkbox"] {
+    margin-right: 8px;
+    accent-color: #f98203;
+}
+
+.apply-filter-btn {
+    width: 100%;
+    padding: 12px;
+    background-color: #1f2226;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.apply-filter-btn:hover {
+    background-color: #3b424a;
+}
+
+.car-listing {
+    flex: 1; /* Takes up remaining space */
+}
+
+/* --- Results Bar (Sorting) --- */
+.results-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #eee;
+}
+
+.results-bar p {
+    font-weight: bold;
+    color: #333;
+}
+
+.results-bar select {
+    padding: 8px 12px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+
+.car-grid.full-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+/* --- Pagination --- */
+.pagination {
+    margin-top: 40px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+}
+
+.pagination a {
+    color: #f98203;
+    padding: 10px 15px;
+    text-decoration: none;
+    border: 1px solid #f98203;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.pagination a:hover:not(.current-page) {
+    background-color: #f98203;
+    color: white;
+}
+
+.pagination .current-page {
+    background-color: #f98203;
+    color: white;
+}
+
+
+/* =========================================
+   MEDIA QUERIES 
+   ========================================= */
 
 @media (max-width: 1250px) {
     .features-section {
@@ -1023,7 +1113,7 @@ h2 {
     }
     .main-header {
         position: relative;
-        background-color: #1f2226; /* Solid background on small screens */
+        background-color: #1f2226; 
     }
     .hero-section {
         height: auto;
@@ -1063,6 +1153,19 @@ h2 {
         bottom: 0;
         margin: 0 auto;
         left: 0;
+    }
+}
+
+@media (max-width: 900px) {
+    .fleet-content-wrapper {
+        flex-direction: column;
+        padding: 0 10px;
+    }
+
+    .filter-sidebar {
+        flex: 0 0 auto;
+        width: 100%;
+        margin-bottom: 20px;
     }
 }
 
@@ -1215,6 +1318,16 @@ h2 {
         width: 100%;
         padding: 30px 20px;
         box-sizing: border-box;
+    }
+    
+    .fleet-page-hero h1 {
+        font-size: 2.5rem;
+    }
+    .fleet-page-hero p {
+        font-size: 1rem;
+    }
+    .car-grid.full-grid {
+        grid-template-columns: 1fr;
     }
 }
 

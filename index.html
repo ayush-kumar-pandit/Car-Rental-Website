@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Akara Rentals - Hassle Free Car Rentals</title>
-    <link rel="icon" type="images" href="images/logo.jpg" />
+    <link rel="icon" type="image/jpg" href="images/logo.jpg" />
     <link rel="stylesheet" href="styles.css" />
     <link
       rel="stylesheet"
@@ -13,25 +13,41 @@
   </head>
 
   <body>
+    <header class="main-header">
+      <div class="header-content">
+        <div class="logo">
+          <img src="images/logo.jpg" alt="Akara Rentals Logo" />
+          <span>Akara Rentals</span>
+        </div>
+        <nav class="main-nav">
+          <a href="index.html" class="active">Home</a>
+          <a href="fleet.html">Our Fleet</a>
+          <a href="#">Attach Car</a>
+          <a href="#">Contact</a>
+        </nav>
+        <a href="#" class="book-now-header">Book Now</a>
+      </div>
+    </header>
+
     <div class="hero-section">
       <div class="video-background-container">
         <video autoplay muted loop playsinline>
           <source src="assets/mustang.mp4" type="video/mp4" />
-          Oops!! an error occured while loading the video.
+          Your browser does not support the video tag.
         </video>
       </div>
       <div class="video-overlay"></div>
       <div class="corner-pattern"></div>
       <div class="hero-content">
         <div id="welcome_area">
-          <img id="welcome_img" src="images/logo.jpg" />
+          <img id="welcome_img" src="images/logo.jpg" alt="Logo" />
           <p id="welcome_txt">Welcome to Akara Rentals</p>
         </div>
         <h1>Explore More, Pay Less</h1>
         <h2>Hassle-Free Car Rentals</h2>
         <h1 class="gradient-text">Akara Rentals</h1>
         <div class="button-container">
-          <a href="#" id="book-now" class="hero-btn">Book Now</a>
+          <a href="fleet.html" id="book-now" class="hero-btn">Book Now</a>
           <a href="#" id="attach-car" class="hero-btn">Attach Car</a>
         </div>
       </div>
@@ -142,7 +158,7 @@
               <i class="fas fa-check-circle"></i> Seamless Pickup & Drop-off
             </li>
           </ul>
-          <a href="#" class="book-now-btn">
+          <a href="fleet.html" class="book-now-btn">
             <i class="fas fa-bookmark"></i> Book Now
           </a>
         </div>
@@ -159,147 +175,67 @@
         <div class="car-grid">
           <div class="car-card">
             <div class="car-image-container">
-              <img
-                src="images/cars/thar.png"
-                alt="Mahindra Thar - 1"
-                class="slideshow-img"
-              />
-              <img
-                src="images/cars/thar_2.png"
-                alt="Mahindra Thar - 2"
-                class="slideshow-img"
-              />
-              <img
-                src="images/cars/thar_3.png"
-                alt="Mahindra Thar - 3"
-                class="slideshow-img"
-              />
-              <img
-                src="images/cars/thar_4.png"
-                alt="Mahindra Thar - 4"
-                class="slideshow-img"
-              />
-              <img
-                src="images/cars/thar_5.png"
-                alt="Mahindra Thar - 5"
-                class="slideshow-img"
-              />
+              <img src="images/cars/thar.png" alt="Mahindra Thar" class="slideshow-img" />
+              <img src="images/cars/thar_2.png" alt="Mahindra Thar" class="slideshow-img" />
+              <img src="images/cars/thar_3.png" alt="Mahindra Thar" class="slideshow-img" />
+              <img src="images/cars/thar_4.png" alt="Mahindra Thar" class="slideshow-img" />
+              <img src="images/cars/thar_5.png" alt="Mahindra Thar" class="slideshow-img" />
             </div>
             <div class="car-info">
               <h3>Mahindra Thar</h3>
               <div class="car-details">
-                <div class="detail-item">
-                  <i class="fas fa-users"></i> 4 Seats
-                </div>
-                <div class="detail-item">
-                  <i class="fas fa-gas-pump"></i> Diesel
-                </div>
-                <div class="detail-item">
-                  <i class="fas fa-cogs"></i> Manual
-                </div>
+                <div class="detail-item"><i class="fas fa-users"></i> 4 Seats</div>
+                <div class="detail-item"><i class="fas fa-gas-pump"></i> Diesel</div>
+                <div class="detail-item"><i class="fas fa-cogs"></i> Manual</div>
               </div>
-              <span class="car-price">₹*,899 <small>/ Day</small></span>
-              <a href="#" class="rent-now-btn">Rent Now</a>
+              <span class="car-price">₹1,899 <small>/ Day</small></span>
+              <a href="fleet.html" class="rent-now-btn">Rent Now</a>
             </div>
           </div>
 
           <div class="car-card">
             <div class="car-image-container">
-              <img
-                src="images/cars/creta.png"
-                alt="Hyundai Creta - 1"
-                class="slideshow-img"
-              />
-              <img
-                src="images/cars/creta_2.png"
-                alt="Hyundai Creta - 2"
-                class="slideshow-img"
-              />
-              <img
-                src="images/cars/creta_3.png"
-                alt="Hyundai Creta - 3"
-                class="slideshow-img"
-              />
-              <img
-                src="images/cars/creta_4.png"
-                alt="Hyundai Creta - 4"
-                class="slideshow-img"
-              />
-              <img
-                src="images/cars/creta_5.png"
-                alt="Hyundai Creta - 5"
-                class="slideshow-img"
-              />
+              <img src="images/cars/creta.png" alt="Hyundai Creta" class="slideshow-img" />
+              <img src="images/cars/creta_2.png" alt="Hyundai Creta" class="slideshow-img" />
+              <img src="images/cars/creta_3.png" alt="Hyundai Creta" class="slideshow-img" />
+              <img src="images/cars/creta_4.png" alt="Hyundai Creta" class="slideshow-img" />
+              <img src="images/cars/creta_5.png" alt="Hyundai Creta" class="slideshow-img" />
             </div>
             <div class="car-info">
               <h3>Hyundai Creta</h3>
               <div class="car-details">
-                <div class="detail-item">
-                  <i class="fas fa-users"></i> 5 Seats
-                </div>
-                <div class="detail-item">
-                  <i class="fas fa-gas-pump"></i> Petrol
-                </div>
-                <div class="detail-item">
-                  <i class="fas fa-cogs"></i> Automatic
-                </div>
+                <div class="detail-item"><i class="fas fa-users"></i> 5 Seats</div>
+                <div class="detail-item"><i class="fas fa-gas-pump"></i> Petrol</div>
+                <div class="detail-item"><i class="fas fa-cogs"></i> Automatic</div>
               </div>
-              <span class="car-price">₹*,999 <small>/ Day</small></span>
-              <a href="#" class="rent-now-btn">Rent Now</a>
+              <span class="car-price">₹1,999 <small>/ Day</small></span>
+              <a href="fleet.html" class="rent-now-btn">Rent Now</a>
             </div>
           </div>
 
           <div class="car-card">
             <div class="car-image-container">
-              <img
-                src="images/cars/safari.png"
-                alt="Tata Safari - 1"
-                class="slideshow-img"
-              />
-              <img
-                src="images/cars/safari_2.png"
-                alt="Tata Safari - 2"
-                class="slideshow-img"
-              />
-              <img
-                src="images/cars/safari_3.png"
-                alt="Tata Safari - 3"
-                class="slideshow-img"
-              />
-              <img
-                src="images/cars/safari_4.png"
-                alt="Tata Safari - 4"
-                class="slideshow-img"
-              />
-              <img
-                src="images/cars/safari_5.png"
-                alt="Tata Safari - 5"
-                class="slideshow-img"
-              />
+              <img src="images/cars/safari.png" alt="Tata Safari" class="slideshow-img" />
+              <img src="images/cars/safari_2.png" alt="Tata Safari" class="slideshow-img" />
+              <img src="images/cars/safari_3.png" alt="Tata Safari" class="slideshow-img" />
+              <img src="images/cars/safari_4.png" alt="Tata Safari" class="slideshow-img" />
+              <img src="images/cars/safari_5.png" alt="Tata Safari" class="slideshow-img" />
             </div>
             <div class="car-info">
               <h3>Tata Safari</h3>
               <div class="car-details">
-                <div class="detail-item">
-                  <i class="fas fa-users"></i> 7 Seats
-                </div>
-                <div class="detail-item">
-                  <i class="fas fa-gas-pump"></i> Diesel
-                </div>
-                <div class="detail-item">
-                  <i class="fas fa-cogs"></i> Manual
-                </div>
+                <div class="detail-item"><i class="fas fa-users"></i> 7 Seats</div>
+                <div class="detail-item"><i class="fas fa-gas-pump"></i> Diesel</div>
+                <div class="detail-item"><i class="fas fa-cogs"></i> Manual</div>
               </div>
-              <span class="car-price">₹*,499 <small>/ Day</small></span>
-              <a href="#" class="rent-now-btn">Rent Now</a>
+              <span class="car-price">₹2,499 <small>/ Day</small></span>
+              <a href="fleet.html" class="rent-now-btn">Rent Now</a>
             </div>
           </div>
         </div>
-        <p style="margin-top: 40px; color: #666">
-          <a
-            href="#"
-            style="color: #f98203; text-decoration: none; font-weight: bold"
-          >
+        
+        <p class="view-all-container">
+          <a href="fleet.html" class="view-all-link">
             View All 50+ Cars in Our Fleet &rarr;
           </a>
         </p>
@@ -312,57 +248,40 @@
         <p class="subtitle">
           Thousands of travelers choose Akara Rentals for their journeys.
         </p>
-
         <div class="testimonial-grid">
           <div class="t-card">
             <p class="t-quote">
               "The booking process was incredibly smooth, and the car was clean
-              and well-maintained. Akara Rentals made my road trip
-              stress-free!"
+              and well-maintained. Akara Rentals made my road trip stress-free!"
             </p>
             <div class="t-author-info">
-              <img
-                class="t-avatar"
-                src="images/user1.jpg"
-                alt="Customer Avatar"
-              />
+              <img class="t-avatar" src="images/user1.jpg" alt="User" />
               <div>
                 <div class="t-name">Anjali K.</div>
                 <div class="t-title">Traveler</div>
               </div>
             </div>
           </div>
-
           <div class="t-card">
             <p class="t-quote">
               "Excellent service and truly affordable pricing. The 24/7 support
-              was reassuring, though I never needed it because everything was
-              perfect."
+              was reassuring, though I never needed it because everything was perfect."
             </p>
             <div class="t-author-info">
-              <img
-                class="t-avatar"
-                src="images/user2.jpg"
-                alt="Customer Avatar"
-              />
+              <img class="t-avatar" src="images/user2.jpg" alt="User" />
               <div>
                 <div class="t-name">Rajesh S.</div>
                 <div class="t-title">Business Owner</div>
               </div>
             </div>
           </div>
-
           <div class="t-card">
             <p class="t-quote">
               "I rented a car for a week, and the flexibility of the plan was a
               lifesaver. Seamless pickup and drop-off—highly recommended!"
             </p>
             <div class="t-author-info">
-              <img
-                class="t-avatar"
-                src="images/user3.jpg"
-                alt="Customer Avatar"
-              />
+              <img class="t-avatar" src="images/user3.jpg" alt="User" />
               <div>
                 <div class="t-name">Priya M.</div>
                 <div class="t-title">Student</div>
@@ -380,7 +299,7 @@
           Book your perfect self-drive car with Akara Rentals today and start
           your hassle-free journey!
         </p>
-        <a href="#" class="cta-btn">Start Your Adventure Now</a>
+        <a href="fleet.html" class="cta-btn">Start Your Adventure Now</a>
       </section>
     </div>
 
@@ -399,18 +318,16 @@
             <a href="#"><i class="fab fa-linkedin-in"></i></a>
           </div>
         </div>
-
         <div class="footer-column">
           <h4>Quick Links</h4>
           <ul class="footer-links">
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Our Fleet</a></li>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="fleet.html">Our Fleet</a></li>
             <li><a href="#">Attach Your Car</a></li>
             <li><a href="#">FAQs</a></li>
             <li><a href="#">Contact Us</a></li>
           </ul>
         </div>
-
         <div class="footer-column">
           <h4>Legal</h4>
           <ul class="footer-links">
@@ -420,12 +337,10 @@
             <li><a href="#">Cancellation Policy</a></li>
           </ul>
         </div>
-
         <div class="footer-column">
           <h4>Contact Info</h4>
           <p>
-            <i class="fas fa-map-marker-alt"></i> 123 Self Drive Way, Bhopal, MP
-            462001
+            <i class="fas fa-map-marker-alt"></i> 123 Self Drive Way, Bhopal, MP 462001
           </p>
           <p><i class="fas fa-phone"></i> +91 98765 43210</p>
           <p><i class="fas fa-envelope"></i> info@akararentals.com</p>
@@ -439,8 +354,7 @@
       </div>
     </div>
     <script>
-      document.getElementById("currentYear").textContent =
-        new Date().getFullYear();
+      document.getElementById("currentYear").textContent = new Date().getFullYear();
     </script>
   </body>
 </html>
