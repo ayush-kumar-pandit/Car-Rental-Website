@@ -9,19 +9,22 @@ body, h1, h2, h3, p, ul, li, a {
 }
 
 /* --- HEADER STYLES --- */
+/* --- HEADER STYLES --- */
 .main-header {
-    position: absolute;
+    position: fixed; /* Fixes the navbar to the viewport */
     top: 0;
     left: 0;
     width: 100%;
-    z-index: 10;
-    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000; /* Ensures it stays above all other content */
+    background-color: rgba(31, 34, 38, 0.85); /* Dark semi-transparent background */
+    backdrop-filter: blur(10px); /* Blurs the content behind the nav (glass effect) */
     padding: 15px 0;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
 
-/* Reusable class for solid header on sub-pages */
+/* Specific override for Fleet page if you want it fully solid */
 .main-header.solid-bg {
-    position: relative;
     background-color: #1f2226; 
 }
 
