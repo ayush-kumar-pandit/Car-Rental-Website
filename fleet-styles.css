@@ -1,13 +1,10 @@
-/* Import main font styles */
 @import url("https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap");
 
-/* Re-setting header background for a dedicated page */
 .main-header.solid-bg {
     position: relative;
     background-color: #1f2226; 
 }
 
-/* --- Fleet Page Hero Section --- */
 .fleet-page-hero {
     background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('images/cars_overhead.jpg') center/cover;
     height: 30vh;
@@ -16,7 +13,7 @@
     justify-content: center;
     color: #ffffff;
     text-align: center;
-    padding-top: 50px; /* Space for the fixed header */
+    padding-top: 50px;
 }
 
 .fleet-page-hero h1 {
@@ -30,7 +27,6 @@
     color: #b0b4b8;
 }
 
-/* --- Main Content Layout (Sidebar + Grid) --- */
 .fleet-content-wrapper {
     display: flex;
     max-width: 1200px;
@@ -40,7 +36,7 @@
 }
 
 .filter-sidebar {
-    flex: 0 0 280px; /* Fixed width sidebar */
+    flex: 0 0 280px; 
     background-color: #ffffff;
     padding: 25px;
     border-radius: 10px;
@@ -105,10 +101,9 @@
 }
 
 .car-listing {
-    flex: 1; /* Takes up remaining space */
+    flex: 1;
 }
 
-/* --- Results Bar (Sorting) --- */
 .results-bar {
     display: flex;
     justify-content: space-between;
@@ -132,7 +127,6 @@
 }
 
 
-/* --- Car Grid (Reusing existing .car-card, .car-info, .car-details, etc. from styles.css) --- */
 
 .car-grid.full-grid {
     display: grid;
@@ -140,7 +134,6 @@
     gap: 30px;
 }
 
-/* --- Pagination --- */
 .pagination {
     margin-top: 40px;
     text-align: center;
@@ -169,7 +162,6 @@
 }
 
 
-/* --- Media Queries for responsiveness --- */
 
 @media (max-width: 900px) {
     .fleet-content-wrapper {
