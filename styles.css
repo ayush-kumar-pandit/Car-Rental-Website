@@ -29,7 +29,7 @@ a {
   left: 0;
   width: 100%;
   z-index: 1000;
-  background-color: rgba(31, 34, 38, 0.85);
+  background-color: rgba(31, 34, 38, 0.85); /* Semi-transparent by default */
   backdrop-filter: blur(10px);
   padding: 5px 0;
   transition: background-color 0.3s ease;
@@ -155,7 +155,7 @@ a {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: rgba(0, 0, 0, 0.5); /* Reduced opacity for clearer video */
   z-index: 2;
 }
 
@@ -996,16 +996,17 @@ a {
     text-align: center;
   }
 
-  .main-header {
-    position: relative;
-    background-color: #1f2226; /* Force solid bg on mobile */
-  }
+  /* FIXED: Remove position: relative to allow video to go under header */
+  /* FIXED: Remove background-color to allow video to show through */
+  /* Default .main-header settings (fixed) will apply */
   
   .hero-section {
-    height: auto;
+    height: 100vh; /* FIXED: Force full screen height on mobile */
+    min-height: 600px; /* Safety min-height */
   }
+  
   .hero-content {
-    top: 10%;
+    top: 15%; /* Adjusted top since header is now overlaying */
   }
 
   .why-choose-section {
@@ -1082,9 +1083,10 @@ a {
 @media (max-width: 600px) {
   .hero-content {
     left: 1%;
-    top: 5%;
-    width: 100vh;
-    height: 80vh;
+    top: 12%; 
+    width: 95%; /* FIXED: changed from 100vh to 95% width */
+    height: auto;
+    padding: 20px;
   }
 
   .video-background-container {
@@ -1101,14 +1103,14 @@ a {
     font-size: 1.2rem;
   }
   #welcome_area {
-    width: 70%;
+    width: 80%;
   }
   #welcome_txt {
-    font-size: 1rem;
+    font-size: 1.1rem;
   }
   .corner-pattern {
-    width: 15rem;
-    height: 7rem;
+    width: 22rem;
+    height: 17rem;
     right: 1rem;
     bottom: 5rem;
     opacity: 1;
@@ -1116,6 +1118,8 @@ a {
 
   .button-container {
     margin-top: 20px;
+    flex-wrap: wrap; 
+    justify-content: center;
   }
   .hero-btn {
     padding: 10px 20px;
