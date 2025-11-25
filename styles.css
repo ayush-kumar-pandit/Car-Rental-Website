@@ -22,6 +22,7 @@ a {
     Arial, sans-serif;
 }
 
+/* --- HEADER --- */
 .main-header {
   position: fixed;
   top: 0;
@@ -46,6 +47,7 @@ a {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: relative;
 }
 
 .logo {
@@ -69,6 +71,11 @@ a {
   width: 40px;
   border-radius: 50%;
   margin-right: 10px;
+}
+
+.main-nav {
+  display: flex;
+  align-items: center;
 }
 
 .main-nav a {
@@ -97,6 +104,23 @@ a {
 
 .book-now-header:hover {
   background-color: #e07000;
+}
+
+/* Menu Toggle (Hamburger) - Hidden on Desktop */
+.menu-toggle {
+  display: none;
+  font-size: 1.5rem;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+/* Mobile specific button class */
+.mobile-only-btn {
+  display: none;
+}
+
+.desktop-only-btn {
+  display: inline-block;
 }
 
 /* --- HERO SECTION (HOME) --- */
@@ -197,46 +221,16 @@ a {
 }
 
 @keyframes imageSlideshow {
-  0%,
-  10% {
-    background-image: url("images/cars/fortuner.png");
-  }
-  10.01%,
-  20% {
-    background-image: url("images/cars/xuv700.png");
-  }
-  20.01%,
-  30% {
-    background-image: url("images/cars/safari.png");
-  }
-  30.01%,
-  40% {
-    background-image: url("images/cars/creta.png");
-  }
-  40.01%,
-  50% {
-    background-image: url("images/cars/thar.png");
-  }
-  50.01%,
-  60% {
-    background-image: url("images/cars/xuv700.png");
-  }
-  60.01%,
-  70% {
-    background-image: url("images/cars/safari.png");
-  }
-  70.01%,
-  80% {
-    background-image: url("images/cars/creta.png");
-  }
-  80.01%,
-  90% {
-    background-image: url("images/cars/thar.png");
-  }
-  90.01%,
-  100% {
-    background-image: url("images/cars/fortuner.png");
-  }
+  0%, 10% { background-image: url("images/cars/fortuner.png"); }
+  10.01%, 20% { background-image: url("images/cars/xuv700.png"); }
+  20.01%, 30% { background-image: url("images/cars/safari.png"); }
+  30.01%, 40% { background-image: url("images/cars/creta.png"); }
+  40.01%, 50% { background-image: url("images/cars/thar.png"); }
+  50.01%, 60% { background-image: url("images/cars/xuv700.png"); }
+  60.01%, 70% { background-image: url("images/cars/safari.png"); }
+  70.01%, 80% { background-image: url("images/cars/creta.png"); }
+  80.01%, 90% { background-image: url("images/cars/thar.png"); }
+  90.01%, 100% { background-image: url("images/cars/fortuner.png"); }
 }
 
 .gradient-text {
@@ -414,40 +408,17 @@ a {
 
 /* Slideshow Animation */
 @keyframes carSlideshow {
-  0% {
-    opacity: 1;
-  }
-  2.5% {
-    opacity: 1;
-  }
-  5% {
-    opacity: 0;
-  }
-  20% {
-    opacity: 0;
-  }
+  0% { opacity: 1; }
+  2.5% { opacity: 1; }
+  5% { opacity: 0; }
+  20% { opacity: 0; }
 }
 
-.slideshow-img:nth-child(1) {
-  animation: carSlideshow 15s infinite;
-  opacity: 1;
-}
-.slideshow-img:nth-child(2) {
-  animation: carSlideshow 15s infinite;
-  animation-delay: 3s;
-}
-.slideshow-img:nth-child(3) {
-  animation: carSlideshow 15s infinite;
-  animation-delay: 6s;
-}
-.slideshow-img:nth-child(4) {
-  animation: carSlideshow 15s infinite;
-  animation-delay: 9s;
-}
-.slideshow-img:nth-child(5) {
-  animation: carSlideshow 15s infinite;
-  animation-delay: 12s;
-}
+.slideshow-img:nth-child(1) { animation: carSlideshow 15s infinite; opacity: 1; }
+.slideshow-img:nth-child(2) { animation: carSlideshow 15s infinite; animation-delay: 3s; }
+.slideshow-img:nth-child(3) { animation: carSlideshow 15s infinite; animation-delay: 6s; }
+.slideshow-img:nth-child(4) { animation: carSlideshow 15s infinite; animation-delay: 9s; }
+.slideshow-img:nth-child(5) { animation: carSlideshow 15s infinite; animation-delay: 12s; }
 
 .car-info {
   padding: 20px;
@@ -962,25 +933,74 @@ a {
   text-decoration: none;
 }
 
-/* --- SHARED MEDIA QUERIES --- */
+/* --- MEDIA QUERIES --- */
 @media (max-width: 1250px) {
   .features-section {
     max-width: 95%;
   }
 }
 
+/* Mobile Menu Transformation */
 @media (max-width: 1050px) {
   .header-content {
+    flex-direction: row; 
+    justify-content: space-between;
+    padding: 10px 20px;
+    text-align: left;
+    position: relative;
+  }
+  
+  /* Show hamburger */
+  .menu-toggle {
+    display: block;
+  }
+
+  /* Hide the desktop 'Book Now' button */
+  .desktop-only-btn {
+    display: none;
+  }
+
+  /* Transform Nav into Dropdown */
+  .main-nav {
+    display: none; /* Hidden by default */
     flex-direction: column;
+    width: 100%;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #1f2226;
+    padding: 20px 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    align-items: center;
+  }
+
+  .main-nav.active {
+    display: flex;
+    animation: slideDown 0.3s ease forwards;
+  }
+
+  .main-nav a {
+    margin: 15px 0;
+    font-size: 1.1rem;
+    display: block;
+    width: 100%;
     text-align: center;
   }
-  .main-nav {
-    margin: 10px 0;
+
+  /* Show mobile-only book button inside menu */
+  .mobile-only-btn {
+    display: inline-block;
+    margin-top: 10px;
+    width: 80%;
+    text-align: center;
   }
+
   .main-header {
     position: relative;
-    background-color: #1f2226;
+    background-color: #1f2226; /* Force solid bg on mobile */
   }
+  
   .hero-section {
     height: auto;
   }
@@ -1022,20 +1042,17 @@ a {
   }
 }
 
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
 @media (max-width: 768px) {
   .footer-content {
     justify-content: flex-start;
   }
   .footer-column {
     flex: 1 1 45%;
-  }
-  .main-nav a {
-    margin: 0 8px;
-    font-size: 0.9rem;
-  }
-  .book-now-header {
-    padding: 6px 15px;
-    font-size: 0.9rem;
   }
 }
 
@@ -1049,16 +1066,6 @@ a {
   .t-card {
     flex: 1 1 100%;
     max-width: 100%;
-  }
-  .cta-section h2 {
-    font-size: 1.8rem;
-  }
-  .cta-section p {
-    font-size: 1rem;
-  }
-  .cta-btn {
-    padding: 12px 30px;
-    font-size: 1rem;
   }
   .car-grid {
     gap: 20px;
@@ -1179,10 +1186,5 @@ a {
   .footer-column {
     flex: 1 1 100%;
     min-width: unset;
-  }
-  .main-nav {
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
   }
 }
