@@ -21,15 +21,21 @@
         <div class="logo">
           <a href="index.html"><img src="images/logo.jpg" alt="Akara Rentals Logo" /></a>
           <a href="index.html">Akara Rentals</a>
-
         </div>
-        <nav class="main-nav">
+        
+        <div class="menu-toggle" id="mobile-menu-btn">
+          <i class="fas fa-bars"></i>
+        </div>
+
+        <nav class="main-nav" id="nav-menu">
           <a href="index.html">Home</a>
           <a href="fleet.html" class="active">Our Fleet</a>
           <a href="#">Attach Car</a>
           <a href="#">Contact</a>
+          <a href="#" class="book-now-header mobile-only-btn">Book Now</a>
         </nav>
-        <a href="#" class="book-now-header">Book Now</a>
+        
+        <a href="#" class="book-now-header desktop-only-btn">Book Now</a>
       </div>
     </header>
 
@@ -270,7 +276,38 @@
         </p>
       </div>
     </div>
+
     <script>
+      const menuBtn = document.getElementById('mobile-menu-btn');
+      const navMenu = document.getElementById('nav-menu');
+      const menuIcon = menuBtn.querySelector('i');
+
+      if(menuBtn) {
+          menuBtn.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            
+            // Toggle Icon
+            if (navMenu.classList.contains('active')) {
+              menuIcon.classList.remove('fa-bars');
+              menuIcon.classList.add('fa-times');
+              // Ensure header is solid bg when menu is open
+              document.querySelector('.main-header').classList.add('solid-bg');
+            } else {
+              menuIcon.classList.remove('fa-times');
+              menuIcon.classList.add('fa-bars');
+            }
+          });
+
+          // Close menu when clicking a link
+          document.querySelectorAll('.main-nav a').forEach(link => {
+            link.addEventListener('click', () => {
+              navMenu.classList.remove('active');
+              menuIcon.classList.remove('fa-times');
+              menuIcon.classList.add('fa-bars');
+            });
+          });
+      }
+
       document.getElementById("currentYear").textContent = new Date().getFullYear();
     </script>
 </body>
