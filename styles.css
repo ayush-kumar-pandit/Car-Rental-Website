@@ -975,7 +975,7 @@ a {
     text-align: center;
   }
   .main-nav {
-    margin: 10px 0;
+    margin: 5px 0;
   }
   .main-header {
     position: relative;
@@ -1076,7 +1076,8 @@ a {
   .hero-content {
     left: 1%;
     top: 5%;
-    width: 90%;
+    width: 100vh;
+    height: 80vh;
   }
 
   .video-background-container {
@@ -1087,21 +1088,21 @@ a {
   }
 
   .hero-content h1 {
-    font-size: 2.5rem;
+    font-size: 2rem;
   }
   .hero-content h2 {
     font-size: 1.2rem;
   }
   #welcome_area {
-    width: 90%;
+    width: 70%;
   }
   #welcome_txt {
     font-size: 1rem;
   }
   .corner-pattern {
-    width: 25rem;
-    height: 17rem;
-    right: -1rem;
+    width: 15rem;
+    height: 10rem;
+    right: 1rem;
     bottom: 5rem;
     opacity: 1;
   }
@@ -1182,6 +1183,6 @@ a {
   .main-nav {
     display: flex;
     flex-direction: column;
-    gap: 5px;
+    gap: 1px;
   }
 }
