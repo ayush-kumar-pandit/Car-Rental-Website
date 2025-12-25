@@ -11,7 +11,7 @@
         @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap');
 
         :root {
-            --primary: #ffc107;      /* Gold */
+            --primary: #ffc107;     
             --primary-hover: #e0a800;
             --secondary: #252525;
             --bg-body: #121212;
@@ -46,13 +46,11 @@
             overflow-x: hidden;
         }
 
-        /* --- Scrollbar --- */
         ::-webkit-scrollbar { width: 8px; }
         ::-webkit-scrollbar-track { background: var(--bg-body); }
         ::-webkit-scrollbar-thumb { background: #444; border-radius: 4px; }
         ::-webkit-scrollbar-thumb:hover { background: var(--primary); }
 
-        /* --- Sidebar --- */
         .sidebar {
             width: 260px;
             background-color: var(--bg-sidebar);
@@ -100,7 +98,6 @@
 
         .nav-links a i { width: 20px; text-align: center; }
 
-        /* --- Main Content --- */
         .main-content {
             margin-left: 260px;
             flex: 1;
@@ -109,7 +106,6 @@
             width: calc(100% - 260px);
         }
 
-        /* --- Header --- */
         .header {
             display: flex;
             justify-content: space-between;
@@ -172,10 +168,8 @@
             background: linear-gradient(45deg, #ffc107, #ff5722);
         }
 
-        /* --- Mobile Toggle --- */
         .menu-toggle { display: none; font-size: 24px; cursor: pointer; color: var(--text-main); }
 
-        /* --- Stats Cards --- */
         .stats-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -212,19 +206,17 @@
         .bg-red { background: rgba(252, 66, 74, 0.1); color: var(--danger); }
         .bg-blue { background: rgba(0, 144, 231, 0.1); color: var(--info); }
 
-        /* --- Charts Section --- */
         .charts-container {
             margin-bottom: 30px;
             background: var(--bg-card);
-            padding: 20px 25px; /* Compact padding */
+            padding: 20px 25px; 
             border-radius: 12px;
             box-shadow: var(--shadow);
             border: 1px solid rgba(255,255,255,0.05);
-            height: 260px; /* Fixed height for consistency */
+            height: 260px; 
             position: relative;
         }
 
-        /* --- Tables --- */
         .table-container {
             background-color: var(--bg-card);
             padding: 25px;
@@ -248,7 +240,6 @@
         td { font-size: 14px; color: #eee; }
         tr:hover td { background-color: rgba(255,255,255,0.02); }
 
-        /* --- Status & Buttons --- */
         .status { padding: 6px 12px; border-radius: 6px; font-size: 11px; font-weight: 700; letter-spacing: 0.5px; text-transform: uppercase; }
         .status.pending { background: rgba(255, 171, 0, 0.2); color: var(--warning); }
         .status.approved, .status.available { background: rgba(0, 210, 91, 0.2); color: var(--success); }
@@ -263,18 +254,16 @@
         .btn-view:hover { background-color: #444; }
         .action-btn:hover { opacity: 0.8; transform: scale(1.05); }
 
-        /* --- Fade Animation --- */
         .content-section { display: none; opacity: 0; transition: opacity 0.4s ease-in-out; }
         .content-section.active-section { display: block; opacity: 1; animation: fadeIn 0.5s; }
         @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
 
-        /* --- Responsive Design --- */
         @media (max-width: 991px) {
             .sidebar { left: -260px; }
             .sidebar.active { left: 0; }
             .main-content { margin-left: 0; width: 100%; }
             .menu-toggle { display: block; }
-            .search-box { display: none; } /* Hide search on small screens */
+            .search-box { display: none; } 
         }
     </style>
 </head>
@@ -562,13 +551,10 @@
     </div>
 
     <script>
-        // Set Current Date
         const dateOptions = { weekday: 'long', year: 'numeric', month: 'short', day: 'numeric' };
         document.getElementById('current-date').innerText = new Date().toLocaleDateString('en-US', dateOptions);
 
-        // Sidebar Navigation Logic
         function showSection(sectionId) {
-            // Update Title
             const titles = {
                 'dashboard': 'Dashboard Overview',
                 'bookings': 'Booking Management',
@@ -577,29 +563,24 @@
             };
             document.getElementById('page-title').innerText = titles[sectionId];
 
-            // Hide all sections
             const sections = document.querySelectorAll('.content-section');
             sections.forEach(section => {
                 section.classList.remove('active-section');
             });
 
-            // Show specific section
             document.getElementById(sectionId).classList.add('active-section');
 
-            // Update sidebar active state
             const links = document.querySelectorAll('.nav-links a');
             links.forEach(link => {
                 link.classList.remove('active');
             });
             document.getElementById('link-' + sectionId).classList.add('active');
 
-            // Close sidebar on mobile after click
             if(window.innerWidth < 991) {
                 toggleSidebar();
             }
         }
 
-        // Mobile Sidebar Toggle
         function toggleSidebar() {
             const sidebar = document.getElementById('sidebar');
             const overlay = document.getElementById('overlay');
@@ -612,13 +593,11 @@
             }
         }
 
-        // Initialize Chart.js with Reduced Height
         const ctx = document.getElementById('revenueChart').getContext('2d');
         
-        // Gradient Fill
         const gradient = ctx.createLinearGradient(0, 0, 0, 400);
-        gradient.addColorStop(0, 'rgba(255, 193, 7, 0.3)'); // Top color (Gold)
-        gradient.addColorStop(1, 'rgba(255, 193, 7, 0.0)'); // Bottom transparent
+        gradient.addColorStop(0, 'rgba(255, 193, 7, 0.3)'); 
+        gradient.addColorStop(1, 'rgba(255, 193, 7, 0.0)'); 
 
         const revenueChart = new Chart(ctx, {
             type: 'line',
@@ -630,17 +609,17 @@
                     backgroundColor: gradient,
                     borderColor: '#ffc107',
                     borderWidth: 2,
-                    pointBackgroundColor: '#1e1e1e', // Dark center for points
+                    pointBackgroundColor: '#1e1e1e', 
                     pointBorderColor: '#ffc107',
                     pointBorderWidth: 2,
                     pointRadius: 3,
-                    tension: 0.4, // Smooth curve
+                    tension: 0.4, 
                     fill: true
                 }]
             },
             options: {
                 responsive: true,
-                maintainAspectRatio: false, // Vital for custom height
+                maintainAspectRatio: false, 
                 plugins: {
                     legend: { display: false },
                     tooltip: {
@@ -661,14 +640,14 @@
                         },
                         ticks: { 
                             color: '#a0a0a0',
-                            font: { size: 10 } // Smaller font
+                            font: { size: 10 }
                         }
                     },
                     x: {
                         grid: { display: false },
                         ticks: { 
                             color: '#a0a0a0',
-                            font: { size: 10 } // Smaller font
+                            font: { size: 10 }
                         }
                     }
                 }
