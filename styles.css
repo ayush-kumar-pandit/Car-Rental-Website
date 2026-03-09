@@ -217,20 +217,20 @@ a {
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
-  animation: imageSlideshow 30s infinite;
+  animation: imageSlideshow 20s infinite;
 }
 
 @keyframes imageSlideshow {
-  0%, 10% { background-image: url("images/cars/fortuner.png"); }
-  10.01%, 20% { background-image: url("images/cars/xuv700.png"); }
-  20.01%, 30% { background-image: url("images/cars/safari.png"); }
-  30.01%, 40% { background-image: url("images/cars/creta.png"); }
-  40.01%, 50% { background-image: url("images/cars/thar.png"); }
-  50.01%, 60% { background-image: url("images/cars/xuv700.png"); }
-  60.01%, 70% { background-image: url("images/cars/safari.png"); }
-  70.01%, 80% { background-image: url("images/cars/creta.png"); }
-  80.01%, 90% { background-image: url("images/cars/thar.png"); }
-  90.01%, 100% { background-image: url("images/cars/fortuner.png"); }
+  0%, 10% { background-image: url("images/cars/corner_pattern/fortuner.png"); }
+  10.01%, 20% { background-image: url("images/cars/corner_pattern/creta.png"); }
+  20.01%, 30% { background-image: url("images/cars/corner_pattern/creta.png"); }
+  30.01%, 40% { background-image: url("images/cars/corner_pattern/fronx.png"); }
+  40.01%, 50% { background-image: url("images/cars/corner_pattern/roxx.png"); }
+  50.01%, 60% { background-image: url("images/cars/corner_pattern/safari.png"); }
+  60.01%, 70% { background-image: url("images/cars/corner_pattern/scorpio_s11.png"); }
+  70.01%, 80% { background-image: url("images/cars/corner_pattern/scorpion.png"); }
+  80.01%, 90% { background-image: url("images/cars/corner_pattern/thar.png"); }
+  90.01%, 100% { background-image: url("images/cars/corner_pattern/xuv700.png"); }
 }
 
 .gradient-text {
