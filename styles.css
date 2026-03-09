@@ -409,9 +409,9 @@ a {
 /* Slideshow Animation */
 @keyframes carSlideshow {
   0% { opacity: 1; }
-  2.5% { opacity: 1; }
-  5% { opacity: 0; }
+  18% { opacity: 1; }
   20% { opacity: 0; }
+  100% { opacity: 0; }
 }
 
 .slideshow-img:nth-child(1) { animation: carSlideshow 15s infinite; opacity: 1; }
